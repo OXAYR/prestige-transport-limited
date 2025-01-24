@@ -10,9 +10,9 @@ const BookingForm = () => {
     <div className="bg-gray-300 bg-opacity-10 p-6 md:p-8 rounded-xl font-abhaya  ">
       <div className="flex space-x-2 mb-4">
         <button
-          className={`flex-1 py-2 rounded-xl text-white text-lg font-abhaya shadow-gray-200 shadow-sm ${
+          className={`flex-1 py-2 rounded-xl  text-lg font-abhaya shadow-gray-200 shadow-sm ${
             tripType === "one-way"
-              ? "bg-white text-black shadow-sm shadow-gray-200"
+              ? "bg-white text-black  shadow-sm shadow-gray-200"
               : "bg-gray-300 bg-opacity-30 text-gray-200 border-gray-200 border"
           }`}
           onClick={() => setTripType("one-way")}
@@ -20,7 +20,7 @@ const BookingForm = () => {
           One way
         </button>
         <button
-          className={`flex-1 p-2 rounded-xl text-white text-lg font-abhaya ${
+          className={`flex-1 p-2 rounded-xl text-lg font-abhaya ${
             tripType === "hourly"
               ? "bg-white text-black shadow-sm shadow-gray-200"
               : "bg-gray-300 bg-opacity-30 text-gray-200 border-gray-200 border shadow-sm shadow-gray-200"

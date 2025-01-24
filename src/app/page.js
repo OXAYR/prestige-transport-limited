@@ -1,5 +1,6 @@
 /** @format */
 
+import AboutUs from "./_components/AboutUs";
 import HeroSection from "./_components/HeroSection";
 import NavHeader from "./_components/NavHeader";
 
@@ -11,6 +12,9 @@ export default function Home() {
       <div>
         <NavHeader />
         <HeroSection />
+      </div>
+      <div className="px-32 pt-32 bg-black ">
+        <AboutUs />
       </div>
     </div>
   );

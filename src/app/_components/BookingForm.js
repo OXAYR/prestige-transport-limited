@@ -57,7 +57,6 @@ const BookingForm = () => {
         />
       </div>
 
-      {/* Submit Button */}
       <button className="mt-6 w-full bg-primary-default text-black p-4 rounded-lg text-lg font-semibold font-abhaya shadow-sm shadow-primary-default">
         Get My Prices
       </button>

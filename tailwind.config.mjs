@@ -15,6 +15,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: { default: "#FDC65C" },
+        silver: {
+          default: "#52575C",
+        },
       },
       fontFamily: {
         abhaya: ["'Abhaya Libre'", "serif"],

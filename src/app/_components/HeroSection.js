@@ -25,7 +25,7 @@ function HeroSection() {
             consectetur adipiscing elit.
           </div>
         </div>
-        <div>
+        <div className="w-1/3">
           <BookingForm />
         </div>
       </div>

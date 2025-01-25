@@ -2,6 +2,7 @@
 
 "use client";
 import { useState } from "react";
+import Button from "./Button";
 
 const BookingForm = () => {
   const [tripType, setTripType] = useState("one-way");
@@ -56,10 +57,14 @@ const BookingForm = () => {
           className="w-full bg-black text-gray-400 border border-gray-300 p-4 rounded-md focus:outline-none focus:border-gray-500"
         />
       </div>
-
-      <button className="mt-6 w-full bg-primary-default text-black p-4 rounded-lg text-lg font-semibold font-abhaya shadow-sm shadow-primary-default">
-        Get My Prices
-      </button>
+      <Button
+        buttonColor="bg-primary-default"
+        buttonWidth="w-full"
+        textColor="text-black"
+        shadowColor="shadow-primary-default"
+        shadowSpread="shadow-md"
+        buttonText="Get My Price"
+      />
     </div>
   );
 };

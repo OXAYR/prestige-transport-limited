@@ -3,6 +3,7 @@
 import AboutUs from "./_components/AboutUs";
 import HeroSection from "./_components/HeroSection";
 import NavHeader from "./_components/NavHeader";
+import OurMission from "./_components/OurMission";
 import RidePricing from "./_components/RidePricing";
 
 // import Image from "next/image";
@@ -19,6 +20,7 @@ export default function Home() {
       </div>
       <div>
         <RidePricing />
+        <OurMission />
       </div>
     </div>
   );

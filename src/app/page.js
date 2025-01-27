@@ -1,6 +1,7 @@
 /** @format */
 
 import AboutUs from "./_components/AboutUs";
+import GetQoute from "./_components/GetQoute";
 import HeroSection from "./_components/HeroSection";
 import NavHeader from "./_components/NavHeader";
 import OurChauffeurs from "./_components/OurChauffeurs";
@@ -22,7 +23,10 @@ export default function Home() {
       <div>
         <RidePricing />
         <OurMission />
-        <OurChauffeurs />
+        {/* No need if demanded by the client then will show it */}
+        {/* <OurChauffeurs /> */}
+
+        <GetQoute />
       </div>
     </div>
   );

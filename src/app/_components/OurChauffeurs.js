@@ -18,6 +18,15 @@ function OurChauffeurs() {
           provide a luxury service and cater to all the needs of their clients.
         </div>
       </div>
+      <div className="flex">
+        <div className="flex flex-col justify-center my-10">
+          <div>
+            <img />
+          </div>
+          <div className="text-center"> John Doe</div>
+          <div className="text-center"> Chauffeur</div>
+        </div>
+      </div>
     </div>
   );
 }

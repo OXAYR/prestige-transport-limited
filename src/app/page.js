@@ -3,6 +3,7 @@
 import AboutUs from "./_components/AboutUs";
 import HeroSection from "./_components/HeroSection";
 import NavHeader from "./_components/NavHeader";
+import OurChauffeurs from "./_components/OurChauffeurs";
 import OurMission from "./_components/OurMission";
 import RidePricing from "./_components/RidePricing";
 
@@ -21,6 +22,7 @@ export default function Home() {
       <div>
         <RidePricing />
         <OurMission />
+        <OurChauffeurs />
       </div>
     </div>
   );

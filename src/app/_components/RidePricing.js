@@ -7,11 +7,11 @@ function RidePricing() {
   return (
     <div className="my-24">
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-4xl text-center font-bold">Our Ride Pricing</h1>
+        <h1 className="text-5xl text-center font-bold">Our Ride Pricing</h1>
         <hr className="w-20 border-2 mt-2 border-primary-default" />
       </div>
       <div className="text-center text-silver-default mt-10  justify-center flex flex-col items-center gap-20">
-        <div className="w-1/3">
+        <div className="text-balance text-center w-1/2 text-lg font-extralight tracking-wider">
           Our department is here to ensure personalized guidance. Our smart team
           takes care of everything. The entire team has been great to work with
           from start to finish.

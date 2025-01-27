@@ -19,7 +19,7 @@ function HeroSection() {
           <div className=" text-8xl font-bold text-white font-abhaya">
             The Best Chauffeur Company
           </div>
-          <div className="text-white mt-10 font-abhaya ">
+          <div className="text-white mt-10 font-abhaya text-lg font-thin tracking-wide">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua
             consectetur adipiscing elit.

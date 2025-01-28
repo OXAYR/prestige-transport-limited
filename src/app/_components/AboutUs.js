@@ -11,7 +11,7 @@ function AboutUs() {
       </div>
 
       {/* Text Section */}
-      <div className="flex flex-col justify-start items-start w-full lg:w-1/3 gap-4  lg:text-left">
+      <div className="flex flex-col justify-start items-start w-full lg:w-1/2 gap-4  lg:text-left">
         <div className="font-bold text-primary-default md:text-2xl text-lg">
           Who Are We
         </div>

@@ -14,18 +14,21 @@ function HeroSection() {
         width: "100%",
       }}
     >
-      <div className="flex justify-between items-center gap-4 px-32 h-full">
-        <div className="w-2/4">
-          <div className=" text-8xl font-bold text-white font-abhaya">
+      <div className="flex flex-col lg:flex-row lg:justify-between justify-evenly items-center gap-4 px-6 md:px-16 lg:px-32 h-full pt-24 lg:pt-0">
+        {/* Text Content */}
+        <div className="w-full lg:w-2/4 text-center lg:text-left">
+          <div className="text-4xl md:text-6xl lg:text-8xl font-bold text-white font-abhaya">
             The Best Chauffeur Company
           </div>
-          <div className="text-white mt-10 font-abhaya text-lg font-thin tracking-wide">
+          <div className="text-white mt-6 md:mt-10 font-abhaya text-sm md:text-lg font-thin tracking-wide">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua
             consectetur adipiscing elit.
           </div>
         </div>
-        <div className="w-1/3">
+
+        {/* Booking Form */}
+        <div className="w-full lg:w-1/3 mt-8 lg:mt-0">
           <BookingForm />
         </div>
       </div>

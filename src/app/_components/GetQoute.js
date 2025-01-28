@@ -23,7 +23,7 @@ function GetQoute() {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: "rgba(0, 0, 0, 0.6)", // Black color with 50% opacity
+          backgroundColor: "rgba(0, 0, 0, 0.6)",
           zIndex: 1,
         }}
         className="flex justify-between items-center h-full px-32"
@@ -35,7 +35,7 @@ function GetQoute() {
           <Button
             buttonColor="bg-primary-default"
             buttonWidth="w-full"
-            textColor="text-white"
+            textColor="text-black"
             shadowColor="shadow-primary-default"
             shadowSpread="shadow-md"
             buttonText="Get A Qoute"

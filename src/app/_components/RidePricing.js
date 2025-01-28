@@ -1,9 +1,28 @@
 /** @format */
-
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Button from "./Button";
 
 function RidePricing() {
+  const rides = [
+    {
+      name: "Mercedes S-Class",
+      hourlyRate: "$65",
+      dayRate: "$2760",
+      heathrowToCentralLondon: "$160",
+      image: "/mercedes-s-class.svg",
+    },
+    {
+      name: "Mercedes S-Class & EQV",
+      hourlyRate: "$65",
+      dayRate: "$2760",
+      heathrowToCentralLondon: "$160",
+      image: "/mercedes-s-class-eqv.svg",
+    },
+  ];
+
+  const [index, setIndex] = useState(0);
+
   return (
     <div className="my-24 px-6 md:px-16 lg:px-32">
       {/* Heading Section */}
@@ -17,7 +36,7 @@ function RidePricing() {
       {/* Content Section */}
       <div className="text-center text-silver-default mt-10 flex flex-col items-center gap-16">
         {/* Description */}
-        <div className="text-balance text-center w-full lg:w-1/2 text-sm md:text-lg font-extralight tracking-wider">
+        <div className="text-balance text-center w-full lg:w-2/3 text-sm md:text-lg font-extralight tracking-wider">
           Our department is here to ensure personalized guidance. Our smart team
           takes care of everything. The entire team has been great to work with
           from start to finish.
@@ -25,33 +44,46 @@ function RidePricing() {
 
         {/* Image Navigation Section */}
         <div className="flex flex-row justify-center items-center gap-4 w-full">
-          <div className="w-1/6 flex justify-center">
+          {/* Left Arrow Button */}
+          <button
+            className="w-1/6 flex justify-center"
+            onClick={() => setIndex(index !== 0 ? index - 1 : index)}
+          >
             <img
               src="/left-arrow.svg"
               alt="Left Arrow"
               className="w-8 md:w-auto"
             />
-          </div>
-          <div className="w-4/6 flex justify-center items-center">
+          </button>
+
+          {/* Ride Image */}
+          <div className="w-full md:w-4/6 flex justify-center items-center">
             <img
-              src="/mercedes-s-class.svg"
-              alt="Mercedes S-Class"
-              className=" h-auto"
+              src={rides[index].image}
+              alt={rides[index].name}
+              className=""
             />
           </div>
-          <div className="w-1/6 flex justify-center">
+
+          {/* Right Arrow Button */}
+          <button
+            className="w-1/6 flex justify-center"
+            onClick={() =>
+              setIndex(index !== rides.length - 1 ? index + 1 : index)
+            }
+          >
             <img
               src="/right-arrow.svg"
               alt="Right Arrow"
               className="w-8 md:w-auto"
             />
-          </div>
+          </button>
         </div>
 
         {/* Pricing Section */}
-        <div className="w-full lg:w-1/3">
+        <div className="w-full lg:w-1/3 mx-auto mt-6">
           <div className="text-2xl md:text-3xl text-left font-bold">
-            Mercedes S-Class
+            {rides[index].name}
           </div>
           <div className="my-3 flex flex-col gap-2">
             {/* Hourly Rate */}
@@ -59,13 +91,17 @@ function RidePricing() {
               <div className="text-silver-default">
                 Hourly rate (minimum 3hrs)
               </div>
-              <div className="text-black font-extrabold">$65</div>
+              <div className="text-black font-extrabold">
+                {rides[index].hourlyRate}
+              </div>
             </div>
             <hr />
             {/* Day Rate */}
             <div className="flex justify-between items-center">
               <div className="text-silver-default">Day rate (8hrs)</div>
-              <div className="text-black font-extrabold">$2760</div>
+              <div className="text-black font-extrabold">
+                {rides[index].dayRate}
+              </div>
             </div>
             <hr />
             {/* Heathrow to Central London */}
@@ -73,7 +109,9 @@ function RidePricing() {
               <div className="text-silver-default">
                 Heathrow to Central London
               </div>
-              <div className="text-black font-extrabold">$160</div>
+              <div className="text-black font-extrabold">
+                {rides[index].heathrowToCentralLondon}
+              </div>
             </div>
             <hr />
           </div>

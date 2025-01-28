@@ -3,16 +3,16 @@
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-5 px-6 md:px-20">
-      <div className="flex justify-between items-center  my-5">
+      <div className="flex justify-between items-center  mt-7 mb-10">
         <div className="md:px-12 px-0 w-full">
-          <h2 className="text-2xl font-bold text-primary-default text-center md:text-left">
+          <h2 className="text-5xl font-bold text-primary-default text-center md:text-left">
             Prestige
           </h2>
         </div>
       </div>
       <div className="container mx-auto text-center md:text-left  grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
-          <h3 className="text-lg font-semibold">Our Cars</h3>
+          <h3 className="md:text-2xl text-lg font-semibold">Our Cars</h3>
           <ul className="mt-2 space-y-1 text-gray-300">
             <li>Mercedes S-Class</li>
             <li>Mercedes V-Class & EQV</li>
@@ -26,7 +26,7 @@ export default function Footer() {
 
         {/* Services */}
         <div>
-          <h3 className="text-lg font-semibold">Services</h3>
+          <h3 className="md:text-2xl text-lg font-semibold">Services</h3>
           <ul className="mt-2 space-y-1 text-gray-300">
             <li>By The Hour</li>
             <li>One Way</li>
@@ -40,7 +40,7 @@ export default function Footer() {
 
         {/* Company Info */}
         <div>
-          <h3 className="text-lg font-semibold">Our Company</h3>
+          <h3 className="md:text-2xl text-lg font-semibold">Our Company</h3>
           <ul className="mt-2 space-y-1 text-gray-300">
             <li>Home</li>
             <li>Cars</li>

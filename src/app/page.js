@@ -17,7 +17,7 @@ export default function Home() {
         <NavHeader />
         <HeroSection />
       </div>
-      <div className="px-32 pt-32 bg-black ">
+      <div className="lg:px-32 px-8  pt-32 bg-black ">
         <AboutUs />
       </div>
       <div>

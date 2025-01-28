@@ -1,6 +1,7 @@
 /** @format */
 
 import AboutUs from "./_components/AboutUs";
+import Footer from "./_components/Footer";
 import GetQoute from "./_components/GetQoute";
 import HeroSection from "./_components/HeroSection";
 import NavHeader from "./_components/NavHeader";
@@ -27,6 +28,7 @@ export default function Home() {
         {/* <OurChauffeurs /> */}
 
         <GetQoute />
+        <Footer />
       </div>
     </div>
   );

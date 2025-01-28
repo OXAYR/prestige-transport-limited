@@ -12,7 +12,7 @@ function OurMission() {
             Our Mission
           </div>
           <div className="text-white font-bold text-3xl md:text-5xl">
-            We are Professional Chauffeurs
+            We are Professional Prestige Transport
           </div>
           <div className="text-gray-300 text-sm md:text-lg">
             Our clients can rely on us in terms of accounting, budget planning,

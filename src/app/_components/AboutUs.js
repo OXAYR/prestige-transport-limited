@@ -16,7 +16,7 @@ function AboutUs() {
           Who Are We
         </div>
         <div className="text-white font-bold text-xl md:text-5xl">
-          We Are A Chauffeur Driven Car Hire Service
+          We Are A Prestige Driven Car Hire Service
         </div>
         <div className="text-gray-300 text-sm md:text-base">
           Based in London, meeting the needs of our valued clients. Having been

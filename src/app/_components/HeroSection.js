@@ -18,7 +18,7 @@ function HeroSection() {
         {/* Text Content */}
         <div className="w-full lg:w-2/4 text-center lg:text-left">
           <div className="text-4xl md:text-6xl lg:text-8xl font-bold text-white font-abhaya">
-            The Best Chauffeur Company
+            The Best Prestige Transport Company
           </div>
           <div className="text-white mt-6 md:mt-10 font-abhaya text-sm md:text-lg font-thin tracking-wide">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

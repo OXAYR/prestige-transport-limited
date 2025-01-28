@@ -14,7 +14,7 @@ function Button({
   return (
     <div>
       <button
-        className={`mt-6 ${buttonColor} ${buttonWidth} ${textColor} p-4 rounded-lg text-lg font-semibold font-abhaya ${shadowSpread} ${shadowColor}`}
+        className={`mt-6 ${buttonColor} ${buttonWidth} ${textColor} px-4 py-2 sm:px-4 sm:py-4 rounded-lg text-lg font-semibold font-abhaya ${shadowSpread} ${shadowColor}`}
       >
         {buttonText}
       </button>

@@ -10,28 +10,17 @@ function GetQoute() {
         backgroundImage: `url('/get-qoute.svg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "30vh",
-        width: "100%",
-        position: "relative",
       }}
-      className="font-abhaya"
+      className="font-abhaya relative h-60 md:h-80 w-full"
     >
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: "rgba(0, 0, 0, 0.6)",
-          zIndex: 1,
-        }}
-        className="flex justify-between items-center h-full px-32"
-      >
-        <div className="1/3 text-4xl text-white">
+      {/* Overlay */}
+      <div className="absolute py-16  bg-black w-full bg-opacity-60 z-1 flex flex-col md:flex-row justify-between items-center h-full px-6 md:px-16 lg:px-32">
+        {/* Text Section */}
+        <div className="text-xl md:text-3xl lg:text-4xl text-white text-center md:text-left mb-4 md:mb-0 w-full md:w-2/3">
           Make your trip an unforgettable moment together.
         </div>
-        <div className="w-1/6">
+        {/* Button Section */}
+        <div className="w-full md:w-1/3 lg:w-1/6 flex justify-center md:justify-end">
           <Button
             buttonColor="bg-primary-default"
             buttonWidth="w-full"

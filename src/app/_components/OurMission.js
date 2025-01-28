@@ -14,7 +14,7 @@ function OurMission() {
           <div className="text-white font-bold text-3xl md:text-5xl">
             We are Professional Chauffeurs
           </div>
-          <div className="text-silver-default text-sm md:text-lg">
+          <div className="text-gray-300 text-sm md:text-lg">
             Our clients can rely on us in terms of accounting, budget planning,
             taxes, etc. We provide a wide range of financial services for
             businesses and individual purposes.
@@ -23,25 +23,25 @@ function OurMission() {
           <div className="grid grid-cols-2 gap-4">
             <div className="p-4 text-center">
               <div className="text-4xl md:text-6xl font-bold">1500</div>
-              <div className="text-silver-default text-lg md:text-2xl mt-2">
+              <div className="text-gray-300 text-lg md:text-2xl mt-2">
                 Successful Rides
               </div>
             </div>
             <div className="p-4 text-center">
               <div className="text-4xl md:text-6xl font-bold">13</div>
-              <div className="text-silver-default text-lg md:text-2xl mt-2">
+              <div className="text-gray-300 text-lg md:text-2xl mt-2">
                 Years of Experience
               </div>
             </div>
             <div className="p-4 text-center">
               <div className="text-4xl md:text-6xl font-bold">300</div>
-              <div className="text-silver-default text-lg md:text-2xl mt-2">
+              <div className="text-gray-300 text-lg md:text-2xl mt-2">
                 Satisfied Partners & Clients
               </div>
             </div>
             <div className="p-4 text-center">
               <div className="text-4xl md:text-6xl font-bold">33</div>
-              <div className="text-silver-default text-lg md:text-2xl mt-2">
+              <div className="text-gray-300 text-lg md:text-2xl mt-2">
                 Company`s Offices
               </div>
             </div>

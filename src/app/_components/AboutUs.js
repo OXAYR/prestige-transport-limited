@@ -18,7 +18,7 @@ function AboutUs() {
         <div className="text-white font-bold text-xl md:text-5xl">
           We Are A Chauffeur Driven Car Hire Service
         </div>
-        <div className="text-silver-default text-sm md:text-base">
+        <div className="text-gray-300 text-sm md:text-base">
           Based in London, meeting the needs of our valued clients. Having been
           in the industry for more than 20 years, we have established a name for
           our reliability and efficient service. We constantly seek to provide

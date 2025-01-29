@@ -20,10 +20,10 @@ function GetQoute() {
           Make your trip an unforgettable moment together.
         </div>
         {/* Button Section */}
-        <div className="w-full md:w-1/3 lg:w-1/6 flex justify-center md:justify-end">
+        <div className="w-full md:w-1/3 lg:w-1/3 flex justify-center md:justify-end">
           <Button
             buttonColor="bg-primary-default"
-            buttonWidth="w-full"
+            buttonWidth="w-72"
             textColor="text-black"
             shadowColor="shadow-primary-default"
             shadowSpread="shadow-md"

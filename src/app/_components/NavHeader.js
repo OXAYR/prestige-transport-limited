@@ -7,10 +7,10 @@ import React, { useState } from "react";
 
 function NavHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navItems = ["Home", "About Us", "Airport Service", "Cars"];
+  const navItems = ["Home", "Airport Service", "business", "Events", "About"];
 
   return (
-    <div className="bg-black flex justify-between items-center px-6 md:px-32 py-4">
+    <div className="bg-black  md:bg-transparent flex justify-between items-center px-6 md:px-32 py-4">
       {/* Logo Section */}
       <div className="flex items-end gap-2">
         <img src="/logo.svg" alt="Logo" className="w-10 h-10" />

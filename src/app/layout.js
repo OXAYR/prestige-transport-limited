@@ -16,6 +16,10 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
         <title>Prestige</title>
       </head>
       <body>{children}</body>

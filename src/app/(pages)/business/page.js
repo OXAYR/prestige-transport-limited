@@ -8,22 +8,22 @@ import NavHeader from "@/app/_components/NavHeader";
 import RidePricing from "@/app/_components/RidePricing";
 import React from "react";
 
-function AirportService() {
+function Business() {
   return (
     <div className=" font-abhaya">
       <div>
         <HeroSection
-          heroTitle="Heathrow Airport Transfers"
-          heroDetails=" With all Heathrow Airport luxury chauffeur transfers punctuality is important to you as a client. "
-          heroBackgroundImage="/airport-hero.svg"
+          heroTitle="Business Travel"
+          heroDetails="Financial Roadshows, Business Meetings, Property Tours"
+          heroBackgroundImage="/business-hero.svg"
         />
       </div>
       <div className="lg:px-32 px-8  pt-32 bg-black ">
         <AboutUs
-          aboutUsDetails="You will be met by one of our uniformed professional chauffeurs who will be waiting to welcome you when you step out of the arrivals hall. He will be holding a board with your name on it. You will expect us to be discreet at all times. If you prefer we can arrange a meeting point and phone or text you when you are in the baggage hall."
-          aboutUsHeading="Your Safety Is With Us"
+          aboutUsDetails="Whether you have a series of meetings throughout thee day, a business lunch, or you need an important client to be met at one of London's Airports we can provide you with a chauffeur driven Mercedes S Class or a Mercedes V Class luxury people carrier. With all the pressures of business meetings it makes sense to leave the driving and parking to someone else, so you can concentrate on the business day ahead."
+          aboutUsHeading="We Provide Comfort"
           buttonText="Contact Us"
-          aboutUsImage="/safety.svg"
+          aboutUsImage="/comfort.svg"
           aboutUsQuestionRequired={false}
         />
       </div>
@@ -37,4 +37,4 @@ function AirportService() {
   );
 }
 
-export default AirportService;
+export default Business;

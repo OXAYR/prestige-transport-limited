@@ -15,7 +15,6 @@ export default function Home() {
   return (
     <div className=" font-abhaya">
       <div>
-        <NavHeader />
         <HeroSection
           heroTitle="The Best Prestige Transport Company"
           heroDetails=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

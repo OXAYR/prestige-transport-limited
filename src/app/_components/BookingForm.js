@@ -10,21 +10,28 @@ const BookingForm = () => {
   const [whereTo, setWhereTo] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  const [isValidated, setIsValidated] = useState(false); // State to track validation
+  const [isValidated, setIsValidated] = useState(false);
 
   const navigateToWhatsapp = () => {
     const phone = "+923044979487";
-    const message = ` Booking Details 
+    let message = `Booking Details
   
 Where From: ${whereFrom}
-Where To: ${whereTo}
 Date: ${date}
 Time: ${time}
+`;
+
+    if (tripType === "hourly") {
+      message += `Number of Hours: ${whereTo}`;
+    } else {
+      message += `Where To: ${whereTo}`;
+    }
+
+    message += `
 
 Thank you for choosing our service!`;
 
-    // Check if all fields are filled
-    if (whereFrom && whereTo && date && time) {
+    if (whereFrom && (tripType === "hourly" ? whereTo : true) && date && time) {
       const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(
         message
       )}`;
@@ -32,7 +39,6 @@ Thank you for choosing our service!`;
       setIsValidated(false); // Reset validation state
     } else {
       setIsValidated(true); // Set validation state to true to highlight empty fields
-      // alert("Please fill in all the fields.");
     }
   };
 
@@ -71,15 +77,27 @@ Thank you for choosing our service!`;
           value={whereFrom}
           onChange={(e) => setWhereFrom(e.target.value)}
         />
-        <input
-          type="text"
-          placeholder="Where To?"
-          className={`w-full bg-black text-white border ${
-            isValidated && !whereTo ? "border-red-500" : "border-gray-300"
-          } p-4 rounded-md focus:outline-none focus:border-gray-500`}
-          value={whereTo}
-          onChange={(e) => setWhereTo(e.target.value)}
-        />
+        {tripType === "hourly" ? (
+          <input
+            type="number"
+            placeholder="Number of Hours"
+            className={`w-full bg-black text-white border ${
+              isValidated && !whereTo ? "border-red-500" : "border-gray-300"
+            } p-4 rounded-md focus:outline-none focus:border-gray-500`}
+            value={whereTo}
+            onChange={(e) => setWhereTo(e.target.value)}
+          />
+        ) : (
+          <input
+            type="text"
+            placeholder="Where To?"
+            className={`w-full bg-black text-white border ${
+              isValidated && !whereTo ? "border-red-500" : "border-gray-300"
+            } p-4 rounded-md focus:outline-none focus:border-gray-500`}
+            value={whereTo}
+            onChange={(e) => setWhereTo(e.target.value)}
+          />
+        )}
         <input
           type="date"
           className={`w-full bg-black ${

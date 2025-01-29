@@ -14,7 +14,7 @@ function GetQoute() {
       className="font-abhaya relative h-60 md:h-80 w-full"
     >
       {/* Overlay */}
-      <div className="absolute py-16  bg-black w-full bg-opacity-60 z-1 flex flex-col md:flex-row justify-between items-center h-full px-6 md:px-16 lg:px-32">
+      <div className="absolute py-16  bg-black w-full bg-opacity-60 z-1 flex flex-col md:flex-row justify-between items-center h-full px-6 md:px-16 lg:px-32 ">
         {/* Text Section */}
         <div className="text-xl md:text-3xl lg:text-4xl text-white text-center md:text-left mb-4 md:mb-0 w-full md:w-2/3">
           Make your trip an unforgettable moment together.

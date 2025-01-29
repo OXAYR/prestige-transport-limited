@@ -16,7 +16,7 @@ function HeroSection({ heroTitle, heroDetails, heroBackgroundImage }) {
       }}
     >
       {/* <NavHeader /> */}
-      <div className="flex flex-col lg:flex-row lg:justify-between justify-evenly items-center gap-4 px-6 md:px-16 lg:px-32 h-full pt-32 lg:pt-0">
+      <div className="flex flex-col lg:flex-row lg:justify-between justify-evenly items-center gap-4 px-6 md:px-16 lg:px-32 h-full pt-44 lg:pt-0">
         {/* Text Content */}
         <div className="w-full lg:w-3/5 text-center lg:text-left">
           <div className="text-4xl md:text-6xl  font-bold text-white font-abhaya">

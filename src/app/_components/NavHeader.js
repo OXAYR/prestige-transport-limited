@@ -2,25 +2,27 @@
 
 "use client";
 import Link from "next/link";
-/** @format */
-
+import { usePathname } from "next/navigation"; // Get current route
 import React, { useEffect, useState } from "react";
 
 function NavHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navItems = ["Home", "Airport Service", "business", "Events", "About"];
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname(); // Get current route
+
+  // Mapping nav items with their corresponding paths
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "Airport Service", path: "/airportService" },
+    { name: "Business", path: "/business" },
+    { name: "Events", path: "/events" },
+    { name: "About", path: "/about" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
-      // Change background color after scrolling 50px (adjust as needed)
-      if (window.scrollY > 1500) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 1200);
     };
-    console.log("wokign");
 
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -30,7 +32,7 @@ function NavHeader() {
 
   return (
     <div
-      className={` hover:bg-black flex justify-between items-center px-6 md:px-32 py-4 ${
+      className={` hover:bg-black flex justify-between items-center px-6 md:px-32 py-4 transition-all duration-300 ${
         isScrolled ? "bg-black shadow-md" : "bg-transparent"
       }`}
     >
@@ -38,7 +40,7 @@ function NavHeader() {
       <div className="flex items-end gap-2">
         <img src="/logo.svg" alt="Logo" className="w-10 h-10" />
         <Link
-          href={`/`}
+          href="/"
           className="text-primary-default text-2xl font-medium font-abhaya"
         >
           Prestige
@@ -47,19 +49,17 @@ function NavHeader() {
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex justify-between items-center gap-8 capitalize">
-        {navItems.map((item) => (
+        {navItems.map(({ name, path }) => (
           <Link
-            key={item}
-            className="text-white text-lg font-medium hover:border-b-2 hover:border-gray-300 transition cursor-pointer font-abhaya"
-            href={`/${
-              item.toLowerCase().includes("airport service")
-                ? "airportService"
-                : item.toLowerCase().includes("home")
-                ? ""
-                : item.toLowerCase()
+            key={name}
+            href={path}
+            className={`text-white text-lg font-medium transition cursor-pointer font-abhaya ${
+              pathname === path
+                ? "border-b-2 border-primary-default" // Active route gets bottom border
+                : "hover:border-b-2 hover:border-gray-300"
             }`}
           >
-            {item}
+            {name}
           </Link>
         ))}
       </div>
@@ -77,19 +77,17 @@ function NavHeader() {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="absolute top-16 left-0 w-full bg-black flex flex-col items-center gap-4 py-4 md:hidden">
-          {navItems.map((item) => (
+          {navItems.map(({ name, path }) => (
             <Link
-              key={item}
-              className="text-white text-lg font-medium hover:border-b-2 hover:border-gray-300 transition cursor-pointer font-abhaya"
-              href={`/${
-                item.toLowerCase().includes("airport service")
-                  ? "airportService"
-                  : item.toLowerCase().includes("home")
-                  ? ""
-                  : item.toLowerCase()
+              key={name}
+              href={path}
+              className={`text-white text-lg font-medium transition cursor-pointer font-abhaya ${
+                pathname === path
+                  ? "border-b-2 border-primary-default" // Active route gets bottom border
+                  : "hover:border-b-2 hover:border-gray-300"
               }`}
             >
-              {item}
+              {name}
             </Link>
           ))}
         </div>

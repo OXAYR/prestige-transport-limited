@@ -47,7 +47,7 @@ function RidePricing() {
           {/* Left Arrow Button */}
           <button
             className="w-1/6 flex justify-center"
-            onClick={() => setIndex(index !== 0 ? index - 1 : index)}
+            onClick={() => setIndex(index !== 0 ? index - 1 : rides.length - 1)}
           >
             <img
               src="/left-arrow.svg"
@@ -68,9 +68,7 @@ function RidePricing() {
           {/* Right Arrow Button */}
           <button
             className="w-1/6 flex justify-center"
-            onClick={() =>
-              setIndex(index !== rides.length - 1 ? index + 1 : index)
-            }
+            onClick={() => setIndex(index !== rides.length - 1 ? index + 1 : 0)}
           >
             <img
               src="/right-arrow.svg"

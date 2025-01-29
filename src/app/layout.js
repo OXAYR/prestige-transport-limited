@@ -2,6 +2,7 @@
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import NavHeader from "./_components/NavHeader";
 
 export const metadata = {
   title: "Create Next App",
@@ -22,7 +23,12 @@ export default function RootLayout({ children }) {
         />
         <title>Prestige</title>
       </head>
-      <body>{children}</body>
+      <body>
+        <div className=" fixed top-0 w-full">
+          <NavHeader />
+        </div>
+        {children}
+      </body>
     </html>
   );
 }

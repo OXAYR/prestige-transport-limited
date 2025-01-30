@@ -17,16 +17,18 @@ export default function Home() {
       <div>
         <HeroSection
           heroTitle="The Prestige Transport Limited Company"
-          heroDetails=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua
-            consectetur adipiscing elit. "
+          heroDetails="Specialized in Providing High-end, Luxury Transport Services in all over the London "
           heroBackgroundImage="/hero.svg"
         />
       </div>
       <div className="lg:px-32 px-8  pt-32 bg-black ">
         <AboutUs
-          aboutUsDetails="Based in London, meeting the needs of our valued clients. Having been in the industry for more than 20 years, we have established a name for our reliability and efficient service. We constantly seek to provide client satisfaction as one of our main goals."
-          aboutUsHeading="We Are A Chauffeur Driven Car Hire Service"
+          aboutUsDetails="At Prestige Transport Limited, We Specialize in Providing High-end, Luxury
+Airport Transfer Services to and From All Major Airports in London, Including Heathrow,
+Gatwick, London City, Luton, and Stansted. Whether You Are a Business Executive, a
+Celebrity, or a Discerning Traveler, We Ensure a Seamless, Comfortable,
+and Exclusive Travel Experience"
+          aboutUsHeading="We Are A Prestige Transport Limited Car Hire Service"
           buttonText="Contact Us"
           aboutUsImage="/about-us-car.svg"
           aboutUsQuestionRequired={true}

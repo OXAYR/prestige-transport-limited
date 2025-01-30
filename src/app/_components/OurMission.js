@@ -12,12 +12,13 @@ function OurMission() {
             Our Mission
           </div>
           <div className="text-white font-bold text-3xl md:text-5xl">
-            We are Professional Prestige Transport
+            Professional And Experienced Chauffeurs
           </div>
           <div className="text-gray-300 text-sm md:text-lg">
-            Our clients can rely on us in terms of accounting, budget planning,
-            taxes, etc. We provide a wide range of financial services for
-            businesses and individual purposes.
+            Our chauffeurs are highly trained, professional, and discrete. With
+            extensive knowledge of London’s roads and traffic patterns, they
+            ensure the most efficient routes for timely arrivals and departures.
+            Their courteous and respectful service guarantees a VIP experience
           </div>
           {/* Statistics Section */}
           <div className="grid grid-cols-2 gap-4">

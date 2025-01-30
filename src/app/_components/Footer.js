@@ -16,11 +16,11 @@ export default function Footer() {
           <ul className="mt-2 space-y-1 text-gray-300">
             <li>Mercedes S-Class</li>
             <li>Mercedes V-Class & EQV</li>
-            <li>Mercedes E-Class</li>
+            {/* <li>Mercedes E-Class</li>
             <li>Range Rover Hybrid</li>
             <li>BMW i7</li>
             <li>Bentley Mulsanne</li>
-            <li>Rolls-Royce Phantom</li>
+            <li>Rolls-Royce Phantom</li> */}
           </ul>
         </div>
 
@@ -33,8 +33,8 @@ export default function Footer() {
             <li>Airport</li>
             <li>Business</li>
             <li>Events</li>
-            <li>Tours</li>
-            <li>Weddings</li>
+            {/* <li>Tours</li>
+            <li>Weddings</li> */}
           </ul>
         </div>
 
@@ -43,13 +43,10 @@ export default function Footer() {
           <h3 className="md:text-2xl text-lg font-semibold">Our Company</h3>
           <ul className="mt-2 space-y-1 text-gray-300">
             <li>Home</li>
-            <li>Cars</li>
+
             <li>Airport Transfers</li>
             <li>Business</li>
             <li>Events</li>
-            <li>About Us</li>
-            <li>Profile</li>
-            <li>Book Now</li>
           </ul>
         </div>
         <div className=" flex flex-col w-full  ">
@@ -70,7 +67,7 @@ export default function Footer() {
       </div>
 
       <div className="text-center text-gray-400 mt-6 border-t border-gray-700 pt-4">
-        Copyright © 2023 Prestige. All rights reserved.
+        Copyright © 2025 Prestige. All rights reserved.
       </div>
     </footer>
   );

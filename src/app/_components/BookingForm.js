@@ -10,15 +10,19 @@ const BookingForm = () => {
   const [whereTo, setWhereTo] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+  const [baggage, setBaggage] = useState("");
+  const [passengers, setPassengers] = useState("");
   const [isValidated, setIsValidated] = useState(false);
 
   const navigateToWhatsapp = () => {
     const phone = "+923044979487";
     let message = `Booking Details
   
-Where From: ${whereFrom}
-Date: ${date}
-Time: ${time}
+    Where From: ${whereFrom}
+    Date: ${date}
+    Time: ${time}
+    Number of Passengers: ${passengers}
+    Number of Baggage: ${baggage}
 `;
 
     if (tripType === "hourly") {
@@ -31,7 +35,14 @@ Time: ${time}
 
 Thank you for choosing our service!`;
 
-    if (whereFrom && (tripType === "hourly" ? whereTo : true) && date && time) {
+    if (
+      whereFrom &&
+      (tripType === "hourly" ? whereTo : true) &&
+      date &&
+      time &&
+      passengers &&
+      baggage
+    ) {
       const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(
         message
       )}`;
@@ -116,6 +127,24 @@ Thank you for choosing our service!`;
           } p-4 rounded-md focus:outline-none focus:border-gray-500`}
           value={time}
           onChange={(e) => setTime(e.target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Number of Passengers"
+          className={`w-full bg-black text-white border ${
+            isValidated && !passengers ? "border-red-500" : "border-gray-300"
+          } p-4 rounded-md focus:outline-none focus:border-gray-500`}
+          value={passengers}
+          onChange={(e) => setPassengers(e.target.value)}
+        />
+        <input
+          type="number"
+          placeholder="Number of Baggage"
+          className={`w-full bg-black text-white border ${
+            isValidated && !baggage ? "border-red-500" : "border-gray-300"
+          } p-4 rounded-md focus:outline-none focus:border-gray-500`}
+          value={baggage}
+          onChange={(e) => setBaggage(e.target.value)}
         />
       </div>
       <Button

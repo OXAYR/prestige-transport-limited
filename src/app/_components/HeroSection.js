@@ -11,7 +11,7 @@ function HeroSection({ heroTitle, heroDetails, heroBackgroundImage }) {
         backgroundImage: `url(${heroBackgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "80vh",
+        height: "100vh",
         width: "100%",
       }}
     >

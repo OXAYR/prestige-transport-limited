@@ -30,7 +30,7 @@ function AboutUs({
         <div className="text-gray-300 text-sm md:text-base">
           {aboutUsDetails}
         </div>
-        <div className="w-full">
+        <div className="w-full lg:w-1/2">
           <Button
             buttonColor="bg-primary-default"
             buttonWidth="w-full"

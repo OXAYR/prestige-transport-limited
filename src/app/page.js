@@ -8,6 +8,7 @@ import NavHeader from "./_components/NavHeader";
 import OurChauffeurs from "./_components/OurChauffeurs";
 import OurMission from "./_components/OurMission";
 import RidePricing from "./_components/RidePricing";
+import Services from "./_components/Services";
 
 // import Image from "next/image";
 
@@ -35,6 +36,7 @@ and Exclusive Travel Experience"
         />
       </div>
       <div>
+        <Services />
         <RidePricing />
         <OurMission />
         {/* No need if demanded by the client then will show it */}

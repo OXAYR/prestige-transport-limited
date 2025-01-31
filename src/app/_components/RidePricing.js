@@ -35,7 +35,7 @@ function RidePricing() {
       moveToPrev();
     }, 9000);
     return () => clearInterval(interval);
-  }, []);
+  }, [index]);
 
   const moveToNext = () => {
     setIndex((prevIndex) => (prevIndex - 1 + rides.length) % rides.length);

@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         <title>Prestige</title>
       </head>
       <body>
-        <div className=" fixed top-0 w-full z-10">
+        <div className=" fixed top-0 w-full z-50">
           <NavHeader />
         </div>
         {children}

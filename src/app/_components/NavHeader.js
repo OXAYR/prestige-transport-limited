@@ -33,7 +33,7 @@ function NavHeader() {
   return (
     <div
       className={` hover:bg-black flex justify-between items-center px-6 md:px-32 py-4 transition-all duration-300 ${
-        isScrolled ? "bg-black shadow-md" : "bg-transparent"
+        isScrolled ? "bg-black shadow-md z-50" : "bg-transparent"
       }`}
     >
       {/* Logo Section */}

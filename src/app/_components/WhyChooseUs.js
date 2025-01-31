@@ -31,7 +31,7 @@ function WhyChooseUs() {
     },
     {
       icon: "beenhere",
-      title: "Hassle Free Booking",
+      title: "Instant Confirmation",
       text: "Booking your luxury car transfer with Prestige Transport Limited is easy and hassle-free. Simply visit our website, fill out the booking form, and receive instant confirmation along with your chauffeur details and vehicle information",
     },
   ];

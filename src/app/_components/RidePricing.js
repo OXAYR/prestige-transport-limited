@@ -66,7 +66,7 @@ function RidePricing() {
         <div className="relative flex justify-center items-center w-full overflow-hidden">
           {/* Left Arrow Button */}
           <button
-            className="absolute left-0 p-2 rounded-full z-10"
+            className="absolute left-0 p-2 rounded-full cursor-pointer"
             onClick={moveToPrev}
           >
             <img
@@ -101,7 +101,7 @@ function RidePricing() {
 
           {/* Right Arrow Button */}
           <button
-            className="absolute right-0 p-2 rounded-full z-10"
+            className="absolute right-0 p-2 rounded-full cursor-pointer "
             onClick={moveToNext}
           >
             <img

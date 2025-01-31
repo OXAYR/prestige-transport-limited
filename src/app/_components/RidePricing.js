@@ -1,6 +1,6 @@
 /** @format */
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "./Button";
 
 function RidePricing() {
@@ -12,14 +12,41 @@ function RidePricing() {
       image: "/mercedes-s-class.svg",
     },
     {
-      name: "Mercedes S-Class & EQV",
-      seats: 7,
-      luggage: 4,
-      image: "/mercedes-s-class-eqv.svg",
+      name: "Mercedes C-Class",
+      seats: 4,
+      luggage: 2,
+      image: "/mercedes-c-class.svg",
     },
+    {
+      name: "Mercedes E-Class",
+      seats: 4,
+      luggage: 2,
+      image: "/mercedes-e-class.svg",
+    },
+    { name: "Audi-a6", seats: 4, luggage: 2, image: "/audi-a6.svg" },
+    { name: "BMW Series 5", seats: 4, luggage: 2, image: "/bmw-series-5.svg" },
+    { name: "BMW Series 7", seats: 4, luggage: 2, image: "/bmw-series-7.svg" },
   ];
 
   const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      moveToNext();
+    }, 9000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const moveToNext = () => {
+    setDirection("forward");
+    setIndex((prevIndex) => (prevIndex - 1 + rides.length) % rides.length);
+  };
+
+  const moveToPrev = () => {
+    setDirection("backward");
+
+    setIndex((prevIndex) => (prevIndex + 1) % rides.length);
+  };
 
   return (
     <div className="my-24 px-6 md:px-16 lg:px-32">
@@ -33,19 +60,17 @@ function RidePricing() {
 
       {/* Content Section */}
       <div className="text-center text-silver-default mt-4 flex flex-col items-center gap-10 lg:gap-16">
-        {/* Description */}
         <div className="text-balance text-center w-full lg:w-2/3 text-sm md:text-lg font-extralight tracking-wider">
-          Premium Fleet of luxury Vehicles
-          <br />
-          We offer a diverse range of luxury vehicles to suit in every needs
+          Premium Fleet of Luxury Vehicles <br />
+          We offer a diverse range of luxury vehicles to suit every need.
         </div>
 
         {/* Image Navigation Section */}
-        <div className="flex flex-row justify-center items-center gap-4 w-full">
+        <div className="relative flex justify-center items-center w-full overflow-hidden">
           {/* Left Arrow Button */}
           <button
-            className="w-1/6 flex justify-center"
-            onClick={() => setIndex(index !== 0 ? index - 1 : rides.length - 1)}
+            className="absolute left-0 p-2 rounded-full z-10"
+            onClick={moveToPrev}
           >
             <img
               src="/left-arrow.svg"
@@ -54,19 +79,33 @@ function RidePricing() {
             />
           </button>
 
-          {/* Ride Image */}
-          <div className="w-full md:w-4/6 flex justify-center items-center">
-            <img
-              src={rides[index].image}
-              alt={rides[index].name}
-              className="h-44"
-            />
+          {/* Image Carousel */}
+          <div className="relative w-64 sm:w-96 lg:w-full h-44 flex justify-center items-center overflow-hidden">
+            {rides.map((ride, i) => (
+              <img
+                key={i}
+                src={ride.image}
+                alt={ride.name}
+                className={`absolute transition-all duration-700 ease-in-out transform h-44
+        ${
+          i === index
+            ? "opacity-100 translate-x-0 scale-100"
+            : "opacity-0 translate-x-full scale-95"
+        }
+        ${
+          i === (index === 0 ? rides.length - 1 : index - 1)
+            ? "-translate-x-full opacity-0"
+            : ""
+        }
+      `}
+              />
+            ))}
           </div>
 
           {/* Right Arrow Button */}
           <button
-            className="w-1/6 flex justify-center"
-            onClick={() => setIndex(index !== rides.length - 1 ? index + 1 : 0)}
+            className="absolute right-0 p-2 rounded-full z-10"
+            onClick={moveToNext}
           >
             <img
               src="/right-arrow.svg"
@@ -82,20 +121,19 @@ function RidePricing() {
             {rides[index].name}
           </div>
           <div className="my-4 flex flex-col gap-2">
-            {/* Hourly Rate */}
             <div className="flex justify-between items-center">
               <div className="text-silver-default flex items-center gap-3">
-                <img src="/passengers-seats.svg" /> Seating Capacity
+                <img src="/passengers-seats.svg" alt="Seats" /> Seating Capacity
               </div>
               <div className="text-black font-extrabold">
                 {rides[index].seats} Passengers
               </div>
             </div>
             <hr />
-            {/* Day Rate */}
             <div className="flex justify-between items-center">
-              <div className="text-silver-default flex items-center  gap-2">
-                <img src="/passengers-suitcase.svg" /> Luggage Capacity
+              <div className="text-silver-default flex items-center gap-2">
+                <img src="/passengers-suitcase.svg" alt="Luggage" /> Luggage
+                Capacity
               </div>
               <div className="text-black font-extrabold capitalize">
                 {rides[index].luggage} suitcases

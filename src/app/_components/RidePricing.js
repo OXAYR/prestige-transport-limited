@@ -32,17 +32,17 @@ function RidePricing() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      moveToPrev();
+      moveToNext();
     }, 9000);
     return () => clearInterval(interval);
   }, []);
 
   const moveToNext = () => {
-    setIndex((prevIndex) => (prevIndex - 1 + rides.length) % rides.length);
+    setIndex((prevIndex) => (prevIndex + 1) % rides.length);
   };
 
   const moveToPrev = () => {
-    setIndex((prevIndex) => (prevIndex + 1) % rides.length);
+    setIndex((prevIndex) => (prevIndex - 1 + rides.length) % rides.length);
   };
 
   return (

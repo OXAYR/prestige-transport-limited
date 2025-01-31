@@ -14,7 +14,7 @@ function Business() {
       <div>
         <HeroSection
           heroTitle="Business Travel"
-          heroDetails="Financial Roadshows, Business Meetings, Property Tours"
+          heroDetails="Tailored for business professionals who need to travel in style and comfort. Our luxury vehicles provide a quiet and productive environment for work on the go, complete with Wi-Fi, charging ports, and more."
           heroBackgroundImage="/business-hero.svg"
         />
       </div>

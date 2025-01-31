@@ -2,7 +2,7 @@
 
 import React from "react";
 
-function WhyChoseUs() {
+function WhyChooseUs() {
   const features = [
     {
       icon: "group",
@@ -15,9 +15,24 @@ function WhyChoseUs() {
       text: "We operate 24 hours a day, 7 days a week, to accommodate your travel schedule, no matter the time of day or night. Our team is always ready to assist, ensuring a hassle-free experience, whether it’s a late-night arrival or an early morning departure.",
     },
     {
-      icon: "map",
+      icon: "person_pin_circle",
       title: "Personalized Service",
       text: "We understand that each traveler has unique needs. Our services are fully customizable, including meet-and-greet at the airport with name signage and assistance with luggage.",
+    },
+    {
+      icon: "alarm_on",
+      title: "Timely & Reliable",
+      text: "We pride ourselves on our punctuality. Our sophisticated tracking systems allow us to monitor flight times and adjust pickup schedules accordingly, ensuring that we are always on time to meet you, even in the case of flight delays.",
+    },
+    {
+      icon: "safety_check",
+      title: "Safety & Comfort",
+      text: "We prioritize the safety of our passengers. All our drivers are background-checked and insured, and our vehicles are regularly serviced to meet the highest standards. You can relax knowing you're in safe hands.",
+    },
+    {
+      icon: "beenhere",
+      title: "Hassle Free Booking",
+      text: "Booking your luxury car transfer with Prestige Transport Limited is easy and hassle-free. Simply visit our website, fill out the booking form, and receive instant confirmation along with your chauffeur details and vehicle information",
     },
   ];
 
@@ -50,4 +65,4 @@ function WhyChoseUs() {
   );
 }
 
-export default WhyChoseUs;
+export default WhyChooseUs;

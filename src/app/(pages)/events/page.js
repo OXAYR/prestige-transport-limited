@@ -14,7 +14,7 @@ function Events() {
       <div>
         <HeroSection
           heroTitle="Prestige Transport For Events"
-          heroDetails=" Setting the standard for exceptional service and sustainability"
+          heroDetails=" Make your special event unforgettable with a luxury ride. From weddings to anniversaries or business celebrations, we provide elegant transport that enhances the occasion."
           heroBackgroundImage="/event-hero.svg"
         />
       </div>

@@ -1,10 +1,12 @@
 /** @format */
-
+"use client";
 import React from "react";
 import BookingForm from "./BookingForm";
 import NavHeader from "./NavHeader";
+import { usePathname } from "next/navigation";
 
 function HeroSection({ heroTitle, heroDetails, heroBackgroundImage }) {
+  const pathName = usePathname();
   return (
     <div
       style={{
@@ -28,9 +30,11 @@ function HeroSection({ heroTitle, heroDetails, heroBackgroundImage }) {
         </div>
 
         {/* Booking Form */}
-        <div className="w-full lg:w-1/3 mt-8 lg:mt-0">
-          <BookingForm />
-        </div>
+        {pathName !== "/about" && (
+          <div className="w-full lg:w-1/3 mt-8 lg:mt-0">
+            <BookingForm />
+          </div>
+        )}
       </div>
     </div>
   );

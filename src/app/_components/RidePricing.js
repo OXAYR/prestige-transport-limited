@@ -32,7 +32,7 @@ function RidePricing() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      moveToNext();
+      moveToPrev();
     }, 9000);
     return () => clearInterval(interval);
   }, []);

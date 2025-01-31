@@ -9,7 +9,7 @@ import OurChauffeurs from "./_components/OurChauffeurs";
 import OurMission from "./_components/OurMission";
 import RidePricing from "./_components/RidePricing";
 import Services from "./_components/Services";
-import WhyChoseUs from "./_components/WhyChoseUs";
+import WhyChooseUs from "./_components/WhyChooseUs";
 
 // import Image from "next/image";
 
@@ -18,8 +18,8 @@ export default function Home() {
     <div className=" font-abhaya">
       <div>
         <HeroSection
-          heroTitle="The Prestige Transport Limited Company"
-          heroDetails="Specialized in Providing High-end, Luxury Transport Services all over the London "
+          heroTitle="Prestige Transport Limited Company"
+          heroDetails="Specialized in Providing High-end, Luxury Transport Services all over the London, UK "
           heroBackgroundImage="/hero.svg"
         />
       </div>
@@ -39,7 +39,7 @@ and Exclusive Travel Experience"
       <div>
         <Services />
         <RidePricing />
-        <WhyChoseUs />
+        <WhyChooseUs />
         {/* <OurMission /> */}
         {/* No need if demanded by the client then will show it */}
         {/* <OurChauffeurs /> */}

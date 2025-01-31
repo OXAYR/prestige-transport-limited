@@ -32,17 +32,17 @@ function RidePricing() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      moveToNext();
+      moveToPrev();
     }, 9000);
     return () => clearInterval(interval);
   }, []);
 
   const moveToNext = () => {
-    setIndex((prevIndex) => (prevIndex + 1) % rides.length);
+    setIndex((prevIndex) => (prevIndex - 1 + rides.length) % rides.length);
   };
 
   const moveToPrev = () => {
-    setIndex((prevIndex) => (prevIndex - 1 + rides.length) % rides.length);
+    setIndex((prevIndex) => (prevIndex + 1) % rides.length);
   };
 
   return (
@@ -84,17 +84,22 @@ function RidePricing() {
                 src={ride.image}
                 alt={ride.name}
                 className={`absolute transition-all duration-700 ease-in-out transform h-44
-        ${
-          i === index
-            ? "opacity-100 translate-x-0 scale-100"
-            : "opacity-0 translate-x-full scale-95"
-        }
-        ${
-          i === (index === 0 ? rides.length - 1 : index - 1)
-            ? "-translate-x-full opacity-0"
-            : ""
-        }
-      `}
+               ${
+                 i === index
+                   ? "opacity-100 translate-x-0 scale-100"
+                   : "opacity-0"
+               }
+               ${
+                 i === (index === 0 ? rides.length - 1 : index - 1)
+                   ? "-translate-x-full opacity-0"
+                   : ""
+               }
+               ${
+                 i === (index === rides.length - 1 ? 0 : index + 1)
+                   ? "translate-x-full opacity-0"
+                   : ""
+               }
+             `}
               />
             ))}
           </div>

@@ -38,13 +38,10 @@ function RidePricing() {
   }, []);
 
   const moveToNext = () => {
-    setDirection("forward");
     setIndex((prevIndex) => (prevIndex - 1 + rides.length) % rides.length);
   };
 
   const moveToPrev = () => {
-    setDirection("backward");
-
     setIndex((prevIndex) => (prevIndex + 1) % rides.length);
   };
 

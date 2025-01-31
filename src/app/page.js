@@ -9,6 +9,7 @@ import OurChauffeurs from "./_components/OurChauffeurs";
 import OurMission from "./_components/OurMission";
 import RidePricing from "./_components/RidePricing";
 import Services from "./_components/Services";
+import WhyChoseUs from "./_components/WhyChoseUs";
 
 // import Image from "next/image";
 
@@ -38,7 +39,8 @@ and Exclusive Travel Experience"
       <div>
         <Services />
         <RidePricing />
-        <OurMission />
+        <WhyChoseUs />
+        {/* <OurMission /> */}
         {/* No need if demanded by the client then will show it */}
         {/* <OurChauffeurs /> */}
 

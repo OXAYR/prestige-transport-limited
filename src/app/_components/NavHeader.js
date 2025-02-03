@@ -32,12 +32,14 @@ function NavHeader() {
 
   return (
     <div
-      className={` hover:bg-black flex justify-between items-center px-6 md:px-32 py-4 transition-all duration-300 z-40 ${
-        isScrolled ? "bg-black shadow-md " : "bg-transparent"
+      className={` hover:bg-gradient-to-tr from-70% from-black to-amber-950 flex justify-between items-center px-6 md:px-32 py-4 transition-all duration-300 z-40 ${
+        isScrolled
+          ? " bg-gradient-to-tr from-70% from-black to-amber-950 shadow-md "
+          : "bg-transparent"
       }`}
     >
       {/* Logo Section */}
-      <div className="flex items-end gap-2">
+      <div className="flex items-center gap-2">
         <img src="/logo.svg" alt="Logo" className="w-10 h-10" />
         <Link
           href="/"

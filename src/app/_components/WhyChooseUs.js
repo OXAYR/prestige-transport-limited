@@ -37,7 +37,7 @@ function WhyChooseUs() {
   ];
 
   return (
-    <div className="bg-black px-8 md:px-16 lg:px-32 py-16 md:py-20 lg:py-28 font-abhaya">
+    <div className=" to-black from-amber-950 bg-gradient-to-bl px-8 md:px-16 lg:px-32 py-16 md:py-20 lg:py-28 font-abhaya">
       {/* Heading Section */}
       <div className="flex flex-col justify-center items-center pb-10 text-center">
         <h1 className="text-3xl md:text-5xl font-bold text-white">
@@ -51,7 +51,7 @@ function WhyChooseUs() {
         {features.map((item, index) => (
           <div
             key={index}
-            className="border-2 border-white hover:bg-white hover:text-black text-white rounded-xl flex flex-col items-center gap-5 text-center transition-all duration-300 ease-in-out px-8 md:px-10 py-10 md:py-12"
+            className="border-2 border-white hover:bg-white hover:text-amber-950 text-white rounded-xl flex flex-col items-center gap-5 text-center transition-all duration-300 ease-in-out px-8 md:px-10 py-10 md:py-12"
           >
             <div className="material-icons text-6xl md:text-7xl lg:text-8xl">
               {item.icon}

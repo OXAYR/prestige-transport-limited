@@ -18,7 +18,7 @@ function AirportService() {
           heroBackgroundImage="/airport-hero.svg"
         />
       </div>
-      <div className="lg:px-32 px-8  pt-32 bg-black ">
+      <div className="lg:px-32 px-8  pt-32  bg-gradient-to-br from-black from-50% to-amber-950 ">
         <AboutUs
           aboutUsDetails="You will be met by one of our uniformed professional chauffeurs who will be waiting to welcome you when you step out of the arrivals hall. He will be holding a board with your name on it. You will expect us to be discreet at all times. If you prefer we can arrange a meeting point and phone or text you when you are in the baggage hall."
           aboutUsHeading="Your Safety Is With Us"

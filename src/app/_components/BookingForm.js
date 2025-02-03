@@ -150,9 +150,9 @@ Thank you for choosing our service!`;
       <Button
         buttonColor="bg-primary-default"
         buttonWidth="w-full"
-        textColor="text-black"
+        textColor="text-amber-950"
         shadowColor="shadow-primary-default"
-        shadowSpread="shadow-md"
+        shadowSpread="shadow"
         buttonText="Get My Price"
         onButtonClick={navigateToWhatsapp}
       />

@@ -23,7 +23,7 @@ export default function Home() {
           heroBackgroundImage="/hero.svg"
         />
       </div>
-      <div className="lg:px-32 px-8  pt-32 bg-black ">
+      <div className="lg:px-32 px-8  pt-32 bg-gradient-to-br from-black from-50% to-amber-950 ">
         <AboutUs
           aboutUsDetails="At Prestige Transport Limited, We Specialize in Providing High-end, Luxury
 Airport Transfer Services to and From All Major Airports in London, Including Heathrow,

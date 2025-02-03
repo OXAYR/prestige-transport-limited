@@ -18,7 +18,7 @@ function Events() {
           heroBackgroundImage="/event-hero.svg"
         />
       </div>
-      <div className="lg:px-32 px-8  pt-32 bg-black ">
+      <div className="lg:px-32 px-8  pt-32  bg-gradient-to-br from-black from-50% to-amber-950 ">
         <AboutUs
           aboutUsDetails="Our dedicated events team can provide premium chauffeur services for any occasion — global or local, big or small, personalized or standardized, we’ve got you covered:
                             Award ceremonies or gala dinners

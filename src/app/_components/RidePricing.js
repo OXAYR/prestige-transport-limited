@@ -144,7 +144,7 @@ function RidePricing() {
             <hr />
           </div>
           <Button
-            buttonColor="bg-black"
+            buttonColor="bg-amber-950 "
             buttonWidth="w-full md:w-1/2"
             textColor="text-white"
             shadowColor="shadow-black"

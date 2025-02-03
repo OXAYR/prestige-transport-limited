@@ -2,12 +2,15 @@
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-5 px-6 md:px-20">
+    <footer className=" bg-gradient-to-br from-black to-amber-950 text-white py-5 px-6 md:px-20">
       <div className="flex justify-between items-center  mt-7 mb-10">
         <div className="md:px-12 px-0 w-full">
-          <h2 className="text-5xl font-bold text-primary-default text-center md:text-left">
-            Prestige
-          </h2>
+          <div className="flex items-center gap-2">
+            <img src="/logo.svg" alt="Logo" className="" />
+            <h2 className="text-5xl font-bold text-primary-default text-center md:text-left">
+              Prestige
+            </h2>
+          </div>
         </div>
       </div>
       <div className="container mx-auto text-center md:text-left  grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -55,9 +58,9 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="p-2 w-full sm:w-96 bg-gray-800 text-white border border-gray-600 rounded-l-md"
+                className="p-2 w-full sm:w-96 bg-black text-white border border-gray-600 rounded-l-md"
               />
-              <button className="bg-primary-default shadow shadow-primary-default text-black px-4 py-2 rounded-r-md">
+              <button className="bg-primary-default shadow shadow-primary-default text-amber-950 px-4 py-2 rounded-r-md">
                 Subscribe
               </button>
             </div>
@@ -65,7 +68,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="text-center text-gray-400 mt-6 border-t border-gray-700 pt-4">
+      <div className="text-center text-amber-600 mt-6 border-t border-black pt-4">
         Copyright © 2025 Prestige. All rights reserved.
       </div>
     </footer>

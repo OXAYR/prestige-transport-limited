@@ -49,7 +49,7 @@ function RidePricing() {
     <div className="my-24 px-6 md:px-16 lg:px-32">
       {/* Heading Section */}
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-3xl md:text-5xl text-center font-bold">
+        <h1 className="text-3xl md:text-5xl text-center font-bold text-amber-950">
           Our Rides
         </h1>
         <hr className="w-20 border-2 mt-2 border-primary-default" />
@@ -119,7 +119,7 @@ function RidePricing() {
 
         {/* Pricing Section */}
         <div className="w-full lg:w-1/3 mx-auto mt-6">
-          <div className="text-2xl md:text-3xl text-left font-bold">
+          <div className="text-2xl md:text-3xl text-left font-bold text-amber-950">
             {rides[index].name}
           </div>
           <div className="my-4 flex flex-col gap-2">

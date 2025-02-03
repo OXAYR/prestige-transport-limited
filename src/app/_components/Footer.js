@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className=" bg-gradient-to-br from-black to-amber-950 text-white py-5 px-6 md:px-20">
       <div className="flex justify-between items-center  mt-7 mb-10">
         <div className="md:px-12 px-0 w-full">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center justify-center lg:justify-start gap-2">
             <img src="/logo.svg" alt="Logo" className="" />
             <h2 className="text-5xl font-bold text-primary-default text-center md:text-left">
               Prestige

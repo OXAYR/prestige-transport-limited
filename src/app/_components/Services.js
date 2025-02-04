@@ -49,7 +49,7 @@ function Services() {
   useEffect(() => {
     const interval = setInterval(nextSlide, 10000); // Auto slide every 10 seconds
     return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
+  }, [currentSlide]);
 
   return (
     <div className="relative w-full h-[600px] lg:h-[500px] overflow-hidden">
@@ -67,7 +67,7 @@ function Services() {
                 backgroundSize: "cover",
               }}
             >
-              <div className="absolute inset-0 bg-amber-950 bg-opacity-40 flex justify-center items-center px-2 w-full">
+              <div className="absolute inset-0 bg-amber-950 bg-opacity-50 flex justify-center items-center px-2 w-full">
                 <button
                   className="lg:w-1/6 w-full flex justify-center"
                   onClick={prevSlide}

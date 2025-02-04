@@ -67,7 +67,7 @@ function Services() {
                 backgroundSize: "cover",
               }}
             >
-              <div className="absolute inset-0 bg-amber-950 bg-opacity-50 flex justify-center items-center px-2 w-full">
+              <div className="absolute inset-0 bg-amber-950 bg-opacity-40 flex justify-center items-center px-2 w-full">
                 <button
                   className="lg:w-1/6 w-full flex justify-center"
                   onClick={prevSlide}
@@ -87,11 +87,11 @@ function Services() {
                   </p>
                   <div className="w-full lg:w-1/5">
                     <Button
-                      buttonColor="bg-primary-default"
+                      buttonColor="bg-gradient-to-tl   to-primary-default from-amber-950"
                       buttonWidth="w-full"
-                      textColor="text-amber-950"
-                      shadowColor="shadow-primary-default"
-                      shadowSpread="shadow"
+                      textColor="text-white"
+                      shadowColor="shadow-amber-800"
+                      shadowSpread="shadow-md"
                       buttonText="Book Now"
                     />
                   </div>

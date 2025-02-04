@@ -32,10 +32,10 @@ function AboutUs({
         </div>
         <div className="w-full lg:w-1/2">
           <Button
-            buttonColor="bg-primary-default"
+            buttonColor="bg-gradient-to-tl   to-primary-default from-amber-950"
             buttonWidth="w-full"
-            textColor="text-amber-950"
-            shadowColor="shadow-primary-default"
+            textColor="text-white"
+            shadowColor="shadow-amber-900"
             shadowSpread="shadow-md"
             buttonText={buttonText}
           />

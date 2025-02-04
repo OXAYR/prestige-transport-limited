@@ -22,10 +22,10 @@ function GetQoute() {
         {/* Button Section */}
         <div className="w-full md:w-1/3 lg:w-1/3 flex justify-center md:justify-end">
           <Button
-            buttonColor="bg-primary-default"
+            buttonColor="bg-gradient-to-tl   to-primary-default from-amber-950"
             buttonWidth="w-72"
-            textColor="text-amber-950"
-            shadowColor="shadow-primary-default"
+            textColor="text-white"
+            shadowColor="shadow-amber-950"
             shadowSpread="shadow"
             buttonText="Get A Qoute"
           />

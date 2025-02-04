@@ -54,7 +54,7 @@ Thank you for choosing our service!`;
   };
 
   return (
-    <div className="bg-gray-300 bg-opacity-10 p-6 md:p-8 rounded-xl font-abhaya">
+    <div className="bg-amber-50 bg-opacity-10 p-6 md:p-8 rounded-xl font-abhaya">
       <div className="flex space-x-2 mb-4">
         <button
           className={`flex-1 py-2 rounded-xl text-lg font-abhaya shadow-gray-200 shadow-sm ${
@@ -148,11 +148,11 @@ Thank you for choosing our service!`;
         />
       </div>
       <Button
-        buttonColor="bg-primary-default"
+        buttonColor="bg-gradient-to-tl   to-primary-default from-amber-950"
         buttonWidth="w-full"
-        textColor="text-amber-950"
-        shadowColor="shadow-primary-default"
-        shadowSpread="shadow"
+        textColor="text-white"
+        shadowColor="shadow-amber-900"
+        shadowSpread="shadow-md"
         buttonText="Get My Price"
         onButtonClick={navigateToWhatsapp}
       />

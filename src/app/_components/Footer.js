@@ -54,13 +54,13 @@ export default function Footer() {
         <div className=" flex flex-col w-full  ">
           <div className="md:w-1/2">
             <h3 className="text-lg font-semibold">Join Us Now!</h3>
-            <div className="mt-2 flex">
+            <div className="mt-2 w-full flex">
               <input
                 type="email"
                 placeholder="Enter your email"
                 className="p-2 w-full sm:w-96 bg-black text-white border border-gray-600 rounded-l-md"
               />
-              <button className="bg-primary-default shadow shadow-primary-default text-amber-950 px-4 py-2 rounded-r-md">
+              <button className="bg-gradient-to-tl   to-primary-default from-amber-950 shadow shadow-amber-900 text-white px-4 py-2 rounded-r-md">
                 Subscribe
               </button>
             </div>

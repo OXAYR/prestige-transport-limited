@@ -25,7 +25,7 @@ function GetQoute() {
             buttonColor="bg-gradient-to-tl   to-primary-default from-amber-950"
             buttonWidth="w-72"
             textColor="text-white"
-            shadowColor="shadow-amber-950"
+            shadowColor="shadow-amber-800"
             shadowSpread="shadow"
             buttonText="Get A Qoute"
           />

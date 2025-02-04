@@ -30,7 +30,7 @@ Airport Transfer Services to and From All Major Airports in London, Including He
 Gatwick, London City, Luton, and Stansted. Whether You Are a Business Executive, a
 Celebrity, or a Discerning Traveler, We Ensure a Seamless, Comfortable,
 and Exclusive Travel Experience"
-          aboutUsHeading="We Are A Prestige Transport Limited Car Hire Service"
+          aboutUsHeading="We Are Prestige Transport Limited Car Hire Service"
           buttonText="Contact Us"
           aboutUsImage="/about-us-car.svg"
           aboutUsQuestionRequired={true}

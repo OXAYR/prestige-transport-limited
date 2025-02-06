@@ -3,6 +3,7 @@
 "use client";
 import { useState } from "react";
 import Button from "./Button";
+import { locations } from "../_data/londonLocations";
 
 const BookingForm = () => {
   const [tripType, setTripType] = useState("one-way");
@@ -13,14 +14,47 @@ const BookingForm = () => {
   const [baggage, setBaggage] = useState("");
   const [passengers, setPassengers] = useState("");
   const [isValidated, setIsValidated] = useState(false);
+  const [showFromDropdown, setShowFromDropdown] = useState(false);
+  const [showToDropdown, setShowToDropdown] = useState(false);
+
+  const filteredFromLocations = locations.filter((location) =>
+    location.toLowerCase().includes(whereFrom.toLowerCase())
+  );
+
+  const filteredToLocations = locations.filter((location) =>
+    location.toLowerCase().includes(whereTo.toLowerCase())
+  );
+
+  const handleSelectFromLocation = (location) => {
+    setWhereFrom(location);
+    setShowFromDropdown(false);
+  };
+
+  const handleSelectToLocation = (location) => {
+    setWhereTo(location);
+    setShowToDropdown(false);
+  };
 
   const navigateToWhatsapp = () => {
     const phone = "+923044979487";
+    // Construct the time string based on the hour value and AM/PM
+    const timeArray = time.split(":");
+    let hour = parseInt(timeArray[0]);
+    const minute = timeArray[1];
+    let formattedTime = "";
+
+    // Check AM/PM formatting
+    if (hour >= 12) {
+      formattedTime = `${hour > 12 ? hour - 12 : hour}:${minute} PM`; // Convert to 12-hour format
+    } else {
+      formattedTime = `${hour === 0 ? 12 : hour}:${minute} AM`; // Handle 12 AM case
+    }
+
     let message = `Booking Details
   
     Where From: ${whereFrom}
     Date: ${date}
-    Time: ${time}
+    Time: ${formattedTime}
     Number of Passengers: ${passengers}
     Number of Baggage: ${baggage}
 `;
@@ -33,7 +67,7 @@ const BookingForm = () => {
 
     message += `
 
-Thank you for choosing our service!`;
+What price would you offer?`;
 
     if (
       whereFrom &&
@@ -79,15 +113,35 @@ Thank you for choosing our service!`;
       </div>
 
       <div className="space-y-4 mt-5">
-        <input
-          type="text"
-          placeholder="Where From?"
-          className={`w-full bg-black text-white border ${
-            isValidated && !whereFrom ? "border-red-500" : "border-gray-300"
-          } p-4 rounded-md focus:outline-none focus:border-gray-500`}
-          value={whereFrom}
-          onChange={(e) => setWhereFrom(e.target.value)}
-        />
+        {/* Where From Input with Dropdown */}
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Where From?"
+            className={`w-full bg-black text-white border ${
+              isValidated && !whereFrom ? "border-red-500" : "border-gray-300"
+            } p-4 rounded-md focus:outline-none focus:border-gray-500`}
+            value={whereFrom}
+            onChange={(e) => {
+              setWhereFrom(e.target.value);
+              setShowFromDropdown(true);
+            }}
+            onFocus={() => setShowFromDropdown(true)}
+          />
+          {showFromDropdown && whereFrom && (
+            <ul className="absolute z-10 w-full bg-white text-black border border-gray-300 mt-1 max-h-60 overflow-y-auto rounded-md">
+              {filteredFromLocations.map((location) => (
+                <li
+                  key={location}
+                  className="p-2 cursor-pointer hover:bg-gray-200"
+                  onClick={() => handleSelectFromLocation(location)}
+                >
+                  {location}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
         {tripType === "hourly" ? (
           <input
             type="number"
@@ -99,15 +153,34 @@ Thank you for choosing our service!`;
             onChange={(e) => setWhereTo(e.target.value)}
           />
         ) : (
-          <input
-            type="text"
-            placeholder="Where To?"
-            className={`w-full bg-black text-white border ${
-              isValidated && !whereTo ? "border-red-500" : "border-gray-300"
-            } p-4 rounded-md focus:outline-none focus:border-gray-500`}
-            value={whereTo}
-            onChange={(e) => setWhereTo(e.target.value)}
-          />
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Where To?"
+              className={`w-full bg-black text-white border ${
+                isValidated && !whereTo ? "border-red-500" : "border-gray-300"
+              } p-4 rounded-md focus:outline-none focus:border-gray-500`}
+              value={whereTo}
+              onChange={(e) => {
+                setWhereTo(e.target.value);
+                setShowToDropdown(true);
+              }}
+              onFocus={() => setShowToDropdown(true)}
+            />
+            {showToDropdown && whereTo && (
+              <ul className="absolute z-10 w-full bg-white text-black border border-gray-300 mt-1 max-h-60 overflow-y-auto rounded-md">
+                {filteredToLocations.map((location) => (
+                  <li
+                    key={location}
+                    className="p-2 cursor-pointer hover:bg-gray-200"
+                    onClick={() => handleSelectToLocation(location)}
+                  >
+                    {location}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         )}
         <input
           type="date"
@@ -120,7 +193,7 @@ Thank you for choosing our service!`;
           onChange={(e) => setDate(e.target.value)}
         />
         <input
-          type="text"
+          type="time"
           placeholder="Time"
           className={`w-full bg-black text-white border ${
             isValidated && !time ? "border-red-500" : "border-gray-300"

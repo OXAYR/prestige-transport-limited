@@ -2,18 +2,22 @@
 
 export default function Footer() {
   return (
-    <footer className=" bg-gradient-to-br from-black to-amber-950 text-white py-5 px-6 md:px-20 font-abhaya">
-      <div className="flex justify-between items-center  mt-7 mb-10">
-        <div className="md:px-12 px-0 w-full">
-          <div className="flex items-center justify-center lg:justify-start gap-2">
+    <footer className="bg-gradient-to-br from-black to-amber-950 text-white py-5 px-6 md:px-20 font-abhaya">
+      <div className="flex flex-col md:flex-row justify-between items-center mt-7 mb-10">
+        <div className="lg:px-12 px-0 w-4/6 text-center lg:text-left ">
+          <div className="flex items-center justify-center md:justify-start gap-2">
             <img src="/logo.svg" alt="Logo" className="" />
-            <h2 className="text-5xl font-bold text-primary-default text-center md:text-left">
+            <h2 className="text-5xl font-bold text-primary-default">
               Prestige
             </h2>
           </div>
         </div>
+        <div className="sm:text-2xl mt-5 sm:mt-0  text-center font-bold text-primary-default ">
+          For Fastest Service: <span className="lg:mx-4"> +447857181685 </span>
+        </div>
       </div>
-      <div className="container mx-auto text-center md:text-left  grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-8 text-center md:text-left">
+        {/* Our Cars */}
         <div>
           <h3 className="md:text-2xl text-lg font-semibold">Our Cars</h3>
           <ul className="mt-2 space-y-1 text-gray-300">
@@ -35,12 +39,8 @@ export default function Footer() {
             <li>Airport</li>
             <li>Business</li>
             <li>Events</li>
-            {/* <li>Tours</li>
-            <li>Weddings</li> */}
           </ul>
         </div>
-
-        {/* Company Info */}
         <div>
           <h3 className="md:text-2xl text-lg font-semibold">Our Company</h3>
           <ul className="mt-2 space-y-1 text-gray-300">
@@ -51,19 +51,45 @@ export default function Footer() {
             <li>Events</li>
           </ul>
         </div>
-        <div className=" flex flex-col w-full  ">
-          <div className="md:w-1/2">
-            <h3 className="text-lg font-semibold">Join Us Now!</h3>
-            <div className="mt-2 w-full flex">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="p-2 w-full sm:w-96 bg-black text-white border border-gray-600 rounded-l-md"
-              />
-              <button className="bg-gradient-to-tl   to-primary-default from-amber-950 shadow shadow-amber-900 text-white px-4 py-2 rounded-r-md">
-                Subscribe
-              </button>
-            </div>
+
+        {/* Subscription */}
+        <div className="w-full">
+          <div className="w-full my-4">
+            <ul className="mt-2 space-y-1 text-gray-300 w-screen">
+              <li className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                  <span className="material-icons">location_on</span>
+                </div>
+                <div className=" font-Abhaya">
+                  2038 2nd Avenue, Las Vegas, United States
+                </div>
+              </li>
+              <li className="flex items-center gap-4">
+                <div className="flex items-center ">
+                  <span className="material-icons text-xs">phone</span>
+                </div>
+                <div className=" font-Abhaya">02088776670, +447857181685</div>
+              </li>
+              <li className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                  <span className="material-icons">email</span>
+                </div>
+                <div className=" font-Abhaya">
+                  prestigetransport77@gmail.com
+                </div>
+              </li>
+            </ul>
+          </div>
+          <h3 className="text-lg font-semibold">Join Us Now!</h3>
+          <div className="mt-2 w-full flex flex-col sm:flex-row">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="p-2 w-full sm:w-96 bg-black text-white border border-gray-600 rounded-md sm:rounded-l-md sm:rounded-r-none"
+            />
+            <button className="bg-gradient-to-tl to-primary-default from-amber-950 shadow shadow-amber-900 text-white px-4 py-2 rounded-md sm:rounded-r-md sm:rounded-l-none mt-2 sm:mt-0">
+              Subscribe
+            </button>
           </div>
         </div>
       </div>

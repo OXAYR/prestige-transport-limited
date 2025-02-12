@@ -1,6 +1,8 @@
 /** @format */
 "use client";
+import GetQoute from "@/app/_components/GetQoute";
 import HeroSection from "@/app/_components/HeroSection";
+import ServiceAndSupport from "@/app/_components/ServiceAndSupport";
 import React from "react";
 
 function About() {
@@ -17,6 +19,10 @@ and Exclusive Travel Experience "
           heroBackgroundImage="/about-us-banner-mask.svg"
         />
       </div>
+
+      <ServiceAndSupport />
+
+      <GetQoute />
     </div>
   );
 }

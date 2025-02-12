@@ -32,7 +32,7 @@ function NavHeader() {
 
   return (
     <div
-      className={` hover:bg-gradient-to-tr from-70% from-black to-amber-950 flex justify-between items-center px-6 md:px-32 py-4 transition-all duration-300 z-40 ${
+      className={` hover:bg-gradient-to-tr from-70% from-black to-amber-950 flex justify-between items-center px-6 lg:px-32 py-4 transition-all duration-300 z-40 ${
         isScrolled
           ? " bg-gradient-to-tr from-70% from-black to-amber-950 shadow-md "
           : "bg-transparent"
@@ -50,7 +50,7 @@ function NavHeader() {
       </div>
 
       {/* Desktop Navigation */}
-      <div className="hidden md:flex justify-between items-center gap-8 capitalize">
+      <div className="hidden lg:flex justify-between items-center gap-8 capitalize">
         {navItems.map(({ name, path }) => (
           <Link
             key={name}
@@ -67,7 +67,7 @@ function NavHeader() {
       </div>
 
       {/* Mobile Menu Icon */}
-      <div className="flex md:hidden">
+      <div className="flex lg:hidden">
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="text-white text-2xl focus:outline-none"
@@ -78,7 +78,7 @@ function NavHeader() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-black flex flex-col items-center gap-4 py-4 md:hidden">
+        <div className="absolute top-16 left-0 w-full bg-black flex flex-col items-center gap-4 py-4 lg:hidden">
           {navItems.map(({ name, path }) => (
             <Link
               key={name}

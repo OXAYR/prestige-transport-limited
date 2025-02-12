@@ -9,13 +9,15 @@ const BookingForm = () => {
   const [tripType, setTripType] = useState("one-way");
   const [whereFrom, setWhereFrom] = useState("");
   const [whereTo, setWhereTo] = useState("");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
+  const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
+  const [time, setTime] = useState(new Date().toISOString().split("T")[1]);
   const [baggage, setBaggage] = useState("");
   const [passengers, setPassengers] = useState("");
   const [isValidated, setIsValidated] = useState(false);
   const [showFromDropdown, setShowFromDropdown] = useState(false);
   const [showToDropdown, setShowToDropdown] = useState(false);
+  const [showPassengersDropdown, setShowPassengersDropdown] = useState(false);
+  const [showBaggageDropdown, setShowBaggageDropdown] = useState(false);
 
   const filteredFromLocations = locations.filter((location) =>
     location.toLowerCase().includes(whereFrom.toLowerCase())
@@ -37,81 +39,39 @@ const BookingForm = () => {
 
   const navigateToWhatsapp = () => {
     const phone = "+923044979487";
-    // Construct the time string based on the hour value and AM/PM
     const timeArray = time.split(":");
     let hour = parseInt(timeArray[0]);
     const minute = timeArray[1];
-    let formattedTime = "";
-
-    // Check AM/PM formatting
-    if (hour >= 12) {
-      formattedTime = `${hour > 12 ? hour - 12 : hour}:${minute} PM`; // Convert to 12-hour format
-    } else {
-      formattedTime = `${hour === 0 ? 12 : hour}:${minute} AM`; // Handle 12 AM case
-    }
+    let formattedTime =
+      hour >= 12
+        ? `${hour > 12 ? hour - 12 : hour}:${minute} PM`
+        : `${hour === 0 ? 12 : hour}:${minute} AM`;
 
     let message = `Booking Details
   
     Where From: ${whereFrom}
+    Where To: ${whereTo}
     Date: ${date}
     Time: ${formattedTime}
     Number of Passengers: ${passengers}
     Number of Baggage: ${baggage}
-`;
+    `;
 
-    if (tripType === "hourly") {
-      message += `Number of Hours: ${whereTo}`;
-    } else {
-      message += `Where To: ${whereTo}`;
-    }
+    message += `\n\nWhat price would you offer?`;
 
-    message += `
-
-What price would you offer?`;
-
-    if (
-      whereFrom &&
-      (tripType === "hourly" ? whereTo : true) &&
-      date &&
-      time &&
-      passengers &&
-      baggage
-    ) {
+    if (whereFrom && whereTo && date && time && passengers && baggage) {
       const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(
         message
       )}`;
       window.open(whatsappUrl, "_blank");
-      setIsValidated(false); // Reset validation state
+      setIsValidated(false);
     } else {
-      setIsValidated(true); // Set validation state to true to highlight empty fields
+      setIsValidated(true);
     }
   };
 
   return (
     <div className="bg-amber-50 bg-opacity-10 p-6 md:p-8 rounded-xl font-abhaya">
-      <div className="flex space-x-2 mb-4">
-        <button
-          className={`flex-1 py-2 rounded-xl text-lg font-abhaya shadow-gray-200 shadow-sm ${
-            tripType === "one-way"
-              ? "bg-white text-black shadow-sm shadow-gray-200"
-              : "bg-gray-300 bg-opacity-30 text-gray-200 border-gray-200 border"
-          }`}
-          onClick={() => setTripType("one-way")}
-        >
-          One way
-        </button>
-        <button
-          className={`flex-1 p-2 rounded-xl text-lg font-abhaya ${
-            tripType === "hourly"
-              ? "bg-white text-black shadow-sm shadow-gray-200"
-              : "bg-gray-300 bg-opacity-30 text-gray-200 border-gray-200 border shadow-sm shadow-gray-200"
-          }`}
-          onClick={() => setTripType("hourly")}
-        >
-          By the hour
-        </button>
-      </div>
-
       <div className="space-y-4 mt-5">
         {/* Where From Input with Dropdown */}
         <div className="relative">
@@ -142,84 +102,118 @@ What price would you offer?`;
             </ul>
           )}
         </div>
-        {tripType === "hourly" ? (
+
+        {/* Where To Input with Dropdown */}
+        <div className="relative">
           <input
-            type="number"
-            placeholder="Number of Hours"
+            type="text"
+            placeholder="Where To?"
             className={`w-full bg-black text-white border ${
               isValidated && !whereTo ? "border-red-500" : "border-gray-300"
             } p-4 rounded-md focus:outline-none focus:border-gray-500`}
             value={whereTo}
-            onChange={(e) => setWhereTo(e.target.value)}
+            onChange={(e) => {
+              setWhereTo(e.target.value);
+              setShowToDropdown(true);
+            }}
+            onFocus={() => setShowToDropdown(true)}
           />
-        ) : (
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Where To?"
-              className={`w-full bg-black text-white border ${
-                isValidated && !whereTo ? "border-red-500" : "border-gray-300"
-              } p-4 rounded-md focus:outline-none focus:border-gray-500`}
-              value={whereTo}
-              onChange={(e) => {
-                setWhereTo(e.target.value);
-                setShowToDropdown(true);
-              }}
-              onFocus={() => setShowToDropdown(true)}
-            />
-            {showToDropdown && whereTo && (
-              <ul className="absolute z-10 w-full bg-white text-black border border-gray-300 mt-1 max-h-60 overflow-y-auto rounded-md">
-                {filteredToLocations.map((location) => (
-                  <li
-                    key={location}
-                    className="p-2 cursor-pointer hover:bg-gray-200"
-                    onClick={() => handleSelectToLocation(location)}
-                  >
-                    {location}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        )}
+          {showToDropdown && whereTo && (
+            <ul className="absolute z-10 w-full bg-white text-black border border-gray-300 mt-1 max-h-60 overflow-y-auto rounded-md">
+              {filteredToLocations.map((location) => (
+                <li
+                  key={location}
+                  className="p-2 cursor-pointer hover:bg-gray-200"
+                  onClick={() => handleSelectToLocation(location)}
+                >
+                  {location}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        {/* Date and Time Fields */}
         <input
           type="date"
-          className={`w-full bg-black ${
-            date ? "text-white" : "text-gray-400"
-          }  border ${
+          className={`w-full bg-black text-white border ${
             isValidated && !date ? "border-red-500" : "border-gray-300"
           } p-4 rounded-md focus:outline-none focus:border-gray-500`}
           value={date}
+          min={new Date().toISOString().split("T")[0]}
           onChange={(e) => setDate(e.target.value)}
         />
         <input
           type="time"
-          placeholder="Time"
           className={`w-full bg-black text-white border ${
             isValidated && !time ? "border-red-500" : "border-gray-300"
           } p-4 rounded-md focus:outline-none focus:border-gray-500`}
           value={time}
+          step="1800"
           onChange={(e) => setTime(e.target.value)}
         />
-        <input
-          type="number"
-          placeholder="Number of Passengers"
-          className={`w-full bg-black text-white border ${
-            isValidated && !passengers ? "border-red-500" : "border-gray-300"
-          } p-4 rounded-md focus:outline-none focus:border-gray-500`}
-          value={passengers}
-          onChange={(e) => setPassengers(e.target.value)}
-        />
-        <input
-          type="number"
-          placeholder="Number of Baggage"
-          className={`w-full bg-black text-white border ${
-            isValidated && !baggage ? "border-red-500" : "border-gray-300"
-          } p-4 rounded-md focus:outline-none focus:border-gray-500`}
-          value={baggage}
-          onChange={(e) => setBaggage(e.target.value)}
-        />
+
+        {/* Passengers Dropdown */}
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Number of Passengers"
+            className={`w-full bg-black text-white border ${
+              isValidated && !passengers ? "border-red-500" : "border-gray-300"
+            } p-4 rounded-md focus:outline-none focus:border-gray-500`}
+            value={passengers}
+            readOnly
+            onClick={() => setShowPassengersDropdown(!showPassengersDropdown)}
+          />
+          {showPassengersDropdown && (
+            <ul className="absolute z-10 w-full bg-white text-black border border-gray-300 mt-1 max-h-60 overflow-y-auto rounded-md">
+              {[1, 2, 3, 4].map((num) => (
+                <li
+                  key={num}
+                  className="p-2 cursor-pointer hover:bg-gray-200"
+                  onClick={() => {
+                    setPassengers(num);
+                    setShowPassengersDropdown(false);
+                  }}
+                >
+                  {num}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        {/* Baggage Dropdown */}
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Number of Baggage"
+            className={`w-full bg-black text-white border ${
+              isValidated && !baggage ? "border-red-500" : "border-gray-300"
+            } p-4 rounded-md focus:outline-none focus:border-gray-500`}
+            value={baggage}
+            readOnly
+            onClick={() => setShowBaggageDropdown(!showBaggageDropdown)}
+          />
+          {showBaggageDropdown && (
+            <ul className="absolute z-10 w-full bg-white text-black border border-gray-300 mt-1 max-h-60 overflow-y-auto rounded-md">
+              {[1, 2, 3, 4].map((num) => (
+                <li
+                  key={num}
+                  className="p-2 cursor-pointer hover:bg-gray-200"
+                  onClick={() => {
+                    setBaggage(num);
+                    setShowBaggageDropdown(false);
+                  }}
+                >
+                  {num}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
+
       <Button
         buttonColor="bg-gradient-to-tl   to-primary-default from-amber-950"
         buttonWidth="w-full"

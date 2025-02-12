@@ -2,6 +2,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Button from "./Button";
+import { useRouter } from "next/navigation";
 
 function Services() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -9,17 +10,20 @@ function Services() {
     {
       image: "/airport-service.svg",
       title: "Airport Pick-Up & Drop-Off",
+      path: "/airportService",
       description:
         "Whether you're arriving or departing from any of London's major airports, we ensure a smooth and comfortable journey. We'll meet you at the designated pick-up point and take you directly to your destination or to your flight with no stress or delays.",
     },
     {
       image: "/business-service.svg",
       title: "Corporate and Executive Transfers",
+      path: "/business",
       description:
         "Tailored for business professionals who need to travel in style and comfort. Our luxury vehicles provide a quiet and productive environment for work on the go, complete with Wi-Fi, charging ports, and more.",
     },
     {
       image: "/get-qoute.svg",
+      path: "/business",
       title: "VIP & Celebrity Transfers",
       description:
         "Our service is discreet and private, ensuring you receive the highest level of comfort, security, and luxury. Whether you're arriving for an important event or need to make a swift departure, we ensure a seamless experience from start to finish.",
@@ -27,16 +31,20 @@ function Services() {
     {
       image: "/about-us-banner.svg",
       title: "Long-Distance Transfers",
+      path: "/business",
       description:
         "In addition to airport transfers, we offer long-distance journeys to other parts of the UK or Europe. Our luxury cars are equipped to ensure a relaxed and pleasant experience, with options for refreshments and entertainment.",
     },
     {
       image: "/event-service.svg",
       title: "Special Occasions",
+      path: "/events",
       description:
         "Make your special event unforgettable with a luxury ride. From weddings to anniversaries or business celebrations, we provide elegant transport that enhances the occasion.",
     },
   ];
+
+  const router = useRouter();
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -44,6 +52,10 @@ function Services() {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const navigateToRoute = (route) => {
+    router.push(route);
   };
 
   useEffect(() => {
@@ -93,6 +105,7 @@ function Services() {
                       shadowColor="shadow-amber-800"
                       shadowSpread="shadow-md"
                       buttonText="Book Now"
+                      onButtonClick={() => navigateToRoute(slide.path)}
                     />
                   </div>
                 </div>

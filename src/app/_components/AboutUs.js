@@ -1,7 +1,8 @@
 /** @format */
-
+"use client";
 import React from "react";
 import Button from "./Button";
+import { openWhatsAppChat } from "../_utills/whatsappService";
 
 function AboutUs({
   buttonText,
@@ -10,6 +11,10 @@ function AboutUs({
   aboutUsImage,
   aboutUsQuestionRequired,
 }) {
+  const contactUs = () => {
+    openWhatsAppChat("contactUs");
+  };
+
   return (
     <div className="flex flex-col-reverse lg:flex-row items-center font-abhaya lg:justify-between gap-8  md:px-16 lg:px-32 ">
       {/* Image Section */}
@@ -38,6 +43,7 @@ function AboutUs({
             shadowColor="shadow-amber-900"
             shadowSpread="shadow-md"
             buttonText={buttonText}
+            onButtonClick={contactUs}
           />
         </div>
       </div>

@@ -4,6 +4,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import { locations } from "../_data/londonLocations";
+import { openWhatsAppChat } from "../_utills/whatsappService";
 
 const BookingForm = () => {
   const [tripType, setTripType] = useState("one-way");
@@ -38,32 +39,15 @@ const BookingForm = () => {
   };
 
   const navigateToWhatsapp = () => {
-    const phone = "+923044979487";
-    const timeArray = time.split(":");
-    let hour = parseInt(timeArray[0]);
-    const minute = timeArray[1];
-    let formattedTime =
-      hour >= 12
-        ? `${hour > 12 ? hour - 12 : hour}:${minute} PM`
-        : `${hour === 0 ? 12 : hour}:${minute} AM`;
-
-    let message = `Booking Details
-  
-    Where From: ${whereFrom}
-    Where To: ${whereTo}
-    Date: ${date}
-    Time: ${formattedTime}
-    Number of Passengers: ${passengers}
-    Number of Baggage: ${baggage}
-    `;
-
-    message += `\n\nWhat price would you offer?`;
-
     if (whereFrom && whereTo && date && time && passengers && baggage) {
-      const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(
-        message
-      )}`;
-      window.open(whatsappUrl, "_blank");
+      openWhatsAppChat("bookingForm", {
+        whereFrom,
+        whereTo,
+        date,
+        time,
+        passengers,
+        baggage,
+      });
       setIsValidated(false);
     } else {
       setIsValidated(true);

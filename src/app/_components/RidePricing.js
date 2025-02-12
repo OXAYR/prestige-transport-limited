@@ -2,6 +2,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Button from "./Button";
+import { openWhatsAppChat } from "../_utills/whatsappService";
 
 function RidePricing() {
   const rides = [
@@ -27,6 +28,10 @@ function RidePricing() {
     { name: "BMW Series 5", seats: 4, luggage: 2, image: "/bmw-series-5.svg" },
     { name: "BMW Series 7", seats: 4, luggage: 2, image: "/bmw-series-7.svg" },
   ];
+
+  const getRidePricing = () => {
+    openWhatsAppChat("bookThisRide", { ride: rides[index] });
+  };
 
   const [index, setIndex] = useState(0);
 
@@ -150,6 +155,7 @@ function RidePricing() {
             shadowColor="shadow-black"
             shadowSpread="shadow-md"
             buttonText="Book This Ride"
+            onButtonClick={getRidePricing}
           />
         </div>
       </div>

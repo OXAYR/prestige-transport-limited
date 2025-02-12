@@ -1,9 +1,13 @@
 /** @format */
-
+"use client";
 import React from "react";
 import Button from "./Button";
+import { openWhatsAppChat } from "../_utills/whatsappService";
 
 function GetQoute() {
+  const contactUs = () => {
+    openWhatsAppChat("contactUs");
+  };
   return (
     <div
       style={{
@@ -28,6 +32,7 @@ function GetQoute() {
             shadowColor="shadow-amber-800"
             shadowSpread="shadow"
             buttonText="Get A Qoute"
+            onButtonClick={contactUs}
           />
         </div>
       </div>

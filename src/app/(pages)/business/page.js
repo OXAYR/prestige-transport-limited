@@ -31,7 +31,6 @@ function Business() {
         <RidePricing />
 
         <GetQoute />
-        <Footer />
       </div>
     </div>
   );

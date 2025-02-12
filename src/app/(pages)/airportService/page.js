@@ -31,7 +31,6 @@ function AirportService() {
         <RidePricing />
 
         <GetQoute />
-        <Footer />
       </div>
     </div>
   );

@@ -45,7 +45,6 @@ and Exclusive Travel Experience"
         {/* <OurChauffeurs /> */}
 
         <GetQoute />
-        <Footer />
       </div>
     </div>
   );

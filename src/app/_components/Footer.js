@@ -2,7 +2,7 @@
 
 export default function Footer() {
   return (
-    <footer className=" bg-gradient-to-br from-black to-amber-950 text-white py-5 px-6 md:px-20">
+    <footer className=" bg-gradient-to-br from-black to-amber-950 text-white py-5 px-6 md:px-20 font-abhaya">
       <div className="flex justify-between items-center  mt-7 mb-10">
         <div className="md:px-12 px-0 w-full">
           <div className="flex items-center justify-center lg:justify-start gap-2">

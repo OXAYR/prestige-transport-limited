@@ -37,7 +37,6 @@ function Events() {
         <RidePricing />
 
         <GetQoute />
-        <Footer />
       </div>
     </div>
   );

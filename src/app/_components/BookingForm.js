@@ -19,6 +19,7 @@ const BookingForm = () => {
   const [showToDropdown, setShowToDropdown] = useState(false);
   const [showPassengersDropdown, setShowPassengersDropdown] = useState(false);
   const [showBaggageDropdown, setShowBaggageDropdown] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const filteredFromLocations = locations.filter((location) =>
     location.toLowerCase().includes(whereFrom.toLowerCase())
@@ -38,20 +39,25 @@ const BookingForm = () => {
     setShowToDropdown(false);
   };
 
-  const navigateToWhatsapp = () => {
+  const handleGetPriceClick = () => {
     if (whereFrom && whereTo && date && time && passengers && baggage) {
-      openWhatsAppChat("bookingForm", {
-        whereFrom,
-        whereTo,
-        date,
-        time,
-        passengers,
-        baggage,
-      });
-      setIsValidated(false);
+      setShowModal(true);
     } else {
       setIsValidated(true);
     }
+  };
+
+  const handleNavigateToWhatsapp = (region) => {
+    setShowModal(false);
+    openWhatsAppChat("bookingForm", {
+      whereFrom,
+      whereTo,
+      date,
+      time,
+      passengers,
+      baggage,
+      region,
+    });
   };
 
   return (
@@ -198,14 +204,50 @@ const BookingForm = () => {
         </div>
       </div>
 
+      {showModal && (
+        <div className="fixed inset-0 z-50  flex items-center justify-center bg-black bg-opacity-50 font-abhaya">
+          <div className=" rounded-md shadow-lg  text-center  bg-white text-amber-950">
+            <div className="flex justify-end m-2">
+              <button
+                className="flex bg-amber-950  rounded-full text-white  px-2 "
+                onClick={() => setShowModal(false)}
+              >
+                x
+              </button>
+            </div>
+            <div className="p-6">
+              <h2 className="text-xl font-semibold mb-4">Select Your Region</h2>
+              <p className="mb-4">
+                Please select your travel region to proceed with booking.
+              </p>
+            </div>
+
+            <div className="flex flex-col justify-between items-center">
+              <button
+                className="w-full   p-3 rounded-md h-32 hover:bg-amber-50 font-bold"
+                onClick={() => handleNavigateToWhatsapp("USA")}
+              >
+                Traveling from USA
+              </button>
+              <button
+                className="w-full   p-3 rounded-md h-32 hover:bg-amber-50 font-bold"
+                onClick={() => handleNavigateToWhatsapp("UK")}
+              >
+                Traveling within UK
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <Button
-        buttonColor="bg-gradient-to-tl   to-primary-default from-amber-950"
+        buttonColor="bg-gradient-to-tl to-primary-default from-amber-950"
         buttonWidth="w-full"
         textColor="text-white"
         shadowColor="shadow-amber-900"
         shadowSpread="shadow-md"
         buttonText="Get My Price"
-        onButtonClick={navigateToWhatsapp}
+        onButtonClick={handleGetPriceClick}
       />
     </div>
   );

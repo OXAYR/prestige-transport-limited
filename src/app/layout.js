@@ -25,13 +25,14 @@ export default function RootLayout({ children }) {
         <title>Prestige</title>
       </head>
       <body>
-        <div>
+        <div className="overflow-x-hidden w-full">
           <div className=" fixed top-0 w-full z-50">
             <NavHeader />
           </div>
-          {children}
+          <main className="">{children}</main>
+
+          <Footer />
         </div>
-        <Footer />
       </body>
     </html>
   );

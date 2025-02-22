@@ -13,8 +13,8 @@ function HeroSection({ heroTitle, heroDetails, heroBackgroundImage }) {
         backgroundImage: `url(${heroBackgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "100vh",
-        width: "100%",
+        height: "120vh",
+        width: "100vw",
       }}
     >
       {/* <NavHeader /> */}

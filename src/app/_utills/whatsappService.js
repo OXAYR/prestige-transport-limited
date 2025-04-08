@@ -50,7 +50,6 @@ export const openWhatsAppChat = (type, data = {}) => {
       message = `I want to book this ride:
   Ride: ${data?.ride?.name}
   Seating Capacity: ${data?.ride?.seats}
-  Luggage Capacity: ${data?.ride?.luggage}
   
   Can you give me a qoute for this ride?`;
       break;

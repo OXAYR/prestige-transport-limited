@@ -20,8 +20,8 @@ function AirportService() {
       </div>
       <div className="lg:px-32 px-8  pt-32  bg-gradient-to-br from-black from-50% to-amber-950 ">
         <AboutUs
-          aboutUsDetails="You will be met by one of our uniformed professional chauffeurs who will be waiting to welcome you when you step out of the arrivals hall. He will be holding a board with your name on it. You will expect us to be discreet at all times. If you prefer we can arrange a meeting point and phone or text you when you are in the baggage hall."
-          aboutUsHeading="Your Safety Is With Us"
+          aboutUsDetails="Whether arriving in or departing from the UK, Prestige Transport Limited ensures a stress-free airport transfer experience. Available at major UK airports, our reliable service eliminates the hassle of public transport or local taxis. Our professional chauffeurs track your flight for any delays and adjust accordingly. With options like First Class for added luxury, we cater to all needs. Booking is quick via our website—just provide your pickup and destination, choose your vehicle, and confirm the fare with no hidden charges. Prestige Transport Limited offers a seamless, comfortable, and transparent airport transfer experience."
+          aboutUsHeading="Seamless Airport Transfers "
           buttonText="Contact Us"
           aboutUsImage="/safety.svg"
           aboutUsQuestionRequired={false}
@@ -29,7 +29,6 @@ function AirportService() {
       </div>
       <div>
         <RidePricing />
-
         <GetQoute />
       </div>
     </div>

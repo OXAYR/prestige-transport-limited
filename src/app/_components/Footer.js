@@ -21,22 +21,22 @@ export default function Footer() {
         <div>
           <h3 className="md:text-2xl text-lg font-semibold">Our Cars</h3>
           <ul className="mt-2 space-y-1 text-gray-300">
-            <li>Mercedes C-Class</li>
-            <li>Mercedes E-Class</li>
-            <li>BMW Series 5</li>
-            <li>BMW Series 7</li>
-            <li>Audi A6</li>
+            <li className=" cursor-pointer">Mercedes S-Class</li>
+            <li className=" cursor-pointer">Mercedes E-Class</li>
+            <li className=" cursor-pointer">BMW Series 5</li>
+            <li className=" cursor-pointer">BMW Series 7</li>
+            <li className=" cursor-pointer">Audi A6</li>
           </ul>
         </div>
 
         <div>
-          <h3 className="md:text-2xl text-lg font-semibold">Our Company</h3>
+          <h3 className="md:text-2xl text-lg font-semibold">Our Services</h3>
           <ul className="mt-2 space-y-1 text-gray-300">
-            <li>Home</li>
+            <li className=" cursor-pointer">Home</li>
 
-            <li>Airport Transfers</li>
-            <li>Business</li>
-            <li>Events</li>
+            <li className=" cursor-pointer">Airport Transfers</li>
+            <li className=" cursor-pointer">Business</li>
+            <li className=" cursor-pointer">Events</li>
           </ul>
         </div>
 

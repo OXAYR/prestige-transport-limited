@@ -41,7 +41,7 @@ export default function ServiceAndSupport() {
         </div>
         <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
           <div className="   w-full">
-            <div className="   bg-transparent border border-amber-50 text-white w-full sm:px-10 py-6 px-4 rounded-lg hover:bg-amber-50 hover:text-amber-950 flex justify-between items-center text-base gap-10 ">
+            <div className=" cursor-pointer   bg-transparent border border-amber-50 text-white w-full sm:px-10 py-6 px-4 rounded-lg hover:bg-amber-50 hover:text-amber-950 flex justify-between items-center text-base gap-10 ">
               <div className="flex items-center gap-2">
                 <span className="material-icons">phone</span>
               </div>
@@ -49,7 +49,7 @@ export default function ServiceAndSupport() {
             </div>
           </div>
           <div className="   w-full">
-            <div className="   bg-transparent border border-amber-50 text-white w-full sm:px-10 py-6 px-4  rounded-lg hover:bg-amber-50 hover:text-amber-950 flex justify-between items-center text-base gap-10 ">
+            <div className=" cursor-pointer  bg-transparent border border-amber-50 text-white w-full sm:px-10 py-6 px-4  rounded-lg hover:bg-amber-50 hover:text-amber-950 flex justify-between items-center text-base gap-10 ">
               <div className="flex items-center gap-2">
                 <span className="material-icons">email</span>
               </div>
@@ -57,7 +57,7 @@ export default function ServiceAndSupport() {
             </div>
           </div>
           <div className="   w-full">
-            <div className="   bg-transparent border border-amber-50 text-white w-full sm:px-10 py-6 px-4  rounded-lg hover:bg-amber-50 hover:text-amber-950 flex justify-between items-center text-base gap-10 ">
+            <div className=" cursor-pointer    bg-transparent border border-amber-50 text-white w-full sm:px-10 py-6 px-4  rounded-lg hover:bg-amber-50 hover:text-amber-950 flex justify-between items-center text-base gap-10 ">
               <div className="flex items-center gap-2">
                 <span className="material-icons">location_on</span>
               </div>

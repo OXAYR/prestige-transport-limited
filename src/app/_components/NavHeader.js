@@ -32,11 +32,12 @@ function NavHeader() {
 
   return (
     <div
-      className={` hover:bg-gradient-to-tr from-70% from-black to-amber-950 flex justify-between items-center px-6 lg:px-32 py-4 transition-all duration-300 z-40 ${
-        isScrolled
-          ? " bg-gradient-to-tr from-70% from-black to-amber-950 shadow-md "
-          : "bg-transparent"
-      }`}
+      // className={` hover:bg-gradient-to-tr from-70% from-black to-amber-950 flex justify-between items-center px-6 lg:px-32 py-4 transition-all duration-300 z-40 ${
+      //   isScrolled
+      //     ? " bg-gradient-to-tr from-70% from-black to-amber-950 shadow-md "
+      //     : "bg-transparent"
+      // }`}
+      className={` bg-gradient-to-tl from-60% from-black to-amber-950 flex justify-between items-center px-6 lg:px-32 py-4 transition-all duration-300 z-40`}
     >
       {/* Logo Section */}
       <div className="flex items-center gap-2">

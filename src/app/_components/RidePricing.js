@@ -6,18 +6,18 @@ import { openWhatsAppChat } from "../_utills/whatsappService";
 
 function RidePricing() {
   const rides = [
-    // {
-    //   name: "Mercedes S-Class",
-    //   seats: 4,
-    //   luggage: 2,
-    //   image: "/mercedes-s-class.svg",
-    // },
     {
-      name: "Mercedes C-Class",
+      name: "Mercedes S-Class",
       seats: 4,
       luggage: 2,
-      image: "/mercedes-c-class.svg",
+      image: "/mercedes-s-class.svg",
     },
+    // {
+    //   name: "Mercedes C-Class",
+    //   seats: 4,
+    //   luggage: 2,
+    //   image: "/mercedes-c-class.svg",
+    // },
     {
       name: "Mercedes E-Class",
       seats: 4,

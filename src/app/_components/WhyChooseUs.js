@@ -17,7 +17,13 @@ function WhyChooseUs() {
     {
       icon: "person_pin_circle",
       title: "Personalized Service",
-      text: "We understand that each traveler has unique needs. Our services are fully customizable, including meet-and-greet at the airport with name signage and assistance with luggage.",
+      text: (
+        <>
+          We understand that each traveler has unique needs. Our services are
+          fully customizable, including <strong>meet-and-greet</strong> at the
+          airport with name signage and assistance with luggage.
+        </>
+      ),
     },
     {
       icon: "alarm_on",

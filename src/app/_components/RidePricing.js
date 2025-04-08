@@ -6,12 +6,12 @@ import { openWhatsAppChat } from "../_utills/whatsappService";
 
 function RidePricing() {
   const rides = [
-    {
-      name: "Mercedes S-Class",
-      seats: 4,
-      luggage: 2,
-      image: "/mercedes-s-class.svg",
-    },
+    // {
+    //   name: "Mercedes S-Class",
+    //   seats: 4,
+    //   luggage: 2,
+    //   image: "/mercedes-s-class.svg",
+    // },
     {
       name: "Mercedes C-Class",
       seats: 4,
@@ -134,16 +134,6 @@ function RidePricing() {
               </div>
               <div className="text-black font-extrabold">
                 {rides[index].seats} Passengers
-              </div>
-            </div>
-            <hr />
-            <div className="flex justify-between items-center">
-              <div className="text-silver-default flex items-center gap-2">
-                <img src="/passengers-suitcase.svg" alt="Luggage" /> Luggage
-                Capacity
-              </div>
-              <div className="text-black font-extrabold capitalize">
-                {rides[index].luggage} suitcases
               </div>
             </div>
             <hr />

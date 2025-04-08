@@ -67,7 +67,7 @@ const BookingForm = () => {
         <div className="relative">
           <input
             type="text"
-            placeholder="Where From?"
+            placeholder="Choose Starting Point"
             className={`w-full bg-black text-white border ${
               isValidated && !whereFrom ? "border-red-500" : "border-gray-300"
             } p-4 rounded-md focus:outline-none focus:border-gray-500`}
@@ -97,7 +97,7 @@ const BookingForm = () => {
         <div className="relative">
           <input
             type="text"
-            placeholder="Where To?"
+            placeholder="Choose Destination"
             className={`w-full bg-black text-white border ${
               isValidated && !whereTo ? "border-red-500" : "border-gray-300"
             } p-4 rounded-md focus:outline-none focus:border-gray-500`}

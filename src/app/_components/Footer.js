@@ -16,12 +16,11 @@ export default function Footer() {
           For Fastest Service: <span className="lg:mx-4"> +447857181685 </span>
         </div>
       </div>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-8 text-center md:text-left">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-end  gap-8 text-center md:text-left">
         {/* Our Cars */}
         <div>
           <h3 className="md:text-2xl text-lg font-semibold">Our Cars</h3>
           <ul className="mt-2 space-y-1 text-gray-300">
-            <li>Mercedes S-Class</li>
             <li>Mercedes C-Class</li>
             <li>Mercedes E-Class</li>
             <li>BMW Series 5</li>
@@ -30,17 +29,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Services */}
-        <div>
-          <h3 className="md:text-2xl text-lg font-semibold">Services</h3>
-          <ul className="mt-2 space-y-1 text-gray-300">
-            <li>By The Hour</li>
-            <li>One Way</li>
-            <li>Airport</li>
-            <li>Business</li>
-            <li>Events</li>
-          </ul>
-        </div>
         <div>
           <h3 className="md:text-2xl text-lg font-semibold">Our Company</h3>
           <ul className="mt-2 space-y-1 text-gray-300">
@@ -79,17 +67,6 @@ export default function Footer() {
                 </div>
               </li>
             </ul>
-          </div>
-          <h3 className="text-lg font-semibold">Join Us Now!</h3>
-          <div className="mt-2 w-full flex flex-col sm:flex-row">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="p-2 w-full sm:w-96 bg-black text-white border border-gray-600 rounded-md sm:rounded-l-md sm:rounded-r-none"
-            />
-            <button className="bg-gradient-to-tl to-primary-default from-amber-950 shadow shadow-amber-900 text-white px-4 py-2 rounded-md sm:rounded-r-md sm:rounded-l-none mt-2 sm:mt-0">
-              Subscribe
-            </button>
           </div>
         </div>
       </div>

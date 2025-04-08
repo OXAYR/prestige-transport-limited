@@ -19,7 +19,7 @@ export default function Home() {
       <div>
         <HeroSection
           heroTitle="Prestige Transport Limited Company"
-          heroDetails="Specialized in Providing High-end, Luxury Transport Services all over the London, UK "
+          heroDetails="Specialising in Providing High-end, Luxury Transport Services across the UK "
           heroBackgroundImage="/hero.svg"
         />
       </div>

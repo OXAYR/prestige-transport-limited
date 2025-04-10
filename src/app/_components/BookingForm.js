@@ -92,7 +92,6 @@ const BookingForm = () => {
             </ul>
           )}
         </div>
-
         {/* Where To Input with Dropdown */}
         <div className="relative">
           <input
@@ -122,26 +121,31 @@ const BookingForm = () => {
             </ul>
           )}
         </div>
-
         {/* Date and Time Fields */}
-        <input
-          type="date"
-          className={`w-full bg-black text-white border ${
-            isValidated && !date ? "border-red-500" : "border-gray-300"
-          } p-4 rounded-md focus:outline-none focus:border-gray-500`}
-          value={date}
-          min={new Date().toISOString().split("T")[0]}
-          onChange={(e) => setDate(e.target.value)}
-        />
-        <input
-          type="time"
-          className={`w-full bg-black text-white border ${
-            isValidated && !time ? "border-red-500" : "border-gray-300"
-          } p-4 rounded-md focus:outline-none focus:border-gray-500`}
-          value={time}
-          step="1800"
-          onChange={(e) => setTime(e.target.value)}
-        />
+        <div className="relative">
+          <input
+            type="date"
+            className={`w-full bg-black text-white border ${
+              isValidated && !date ? "border-red-500" : "border-gray-300"
+            } p-4 rounded-md focus:outline-none focus:border-gray-500 appearance-none`}
+            value={date}
+            min={new Date().toISOString().split("T")[0]}
+            onChange={(e) => setDate(e.target.value)}
+            pattern="\d{4}-\d{2}-\d{2}"
+          />
+        </div>
+        <div className="relative">
+          <input
+            type="time"
+            className={`w-full bg-black text-white border ${
+              isValidated && !time ? "border-red-500" : "border-gray-300"
+            } p-4 rounded-md focus:outline-none focus:border-gray-500 appearance-none`}
+            value={time}
+            step="1800"
+            onChange={(e) => setTime(e.target.value)}
+            pattern="[0-9]{2}:[0-9]{2}"
+          />
+        </div>
 
         {/* Passengers Dropdown */}
         <div className="relative">
@@ -172,7 +176,6 @@ const BookingForm = () => {
             </ul>
           )}
         </div>
-
         {/* Baggage Dropdown */}
         <div className="relative">
           <input

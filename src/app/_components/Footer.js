@@ -43,8 +43,8 @@ export default function Footer() {
         {/* Subscription */}
         <div className="w-full">
           <div className="w-full my-4">
-            <ul className="mt-2 space-y-1 text-gray-300 w-screen">
-              <li className="flex items-center gap-4">
+            <ul className="mt-2 space-y-1  text-gray-300 ">
+              <li className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 pb-6 sm:pb-0 ">
                 <div className="flex items-center gap-2">
                   <span className="material-icons">location_on</span>
                 </div>
@@ -52,13 +52,13 @@ export default function Footer() {
                   2038 2nd Avenue, Las Vegas, United States
                 </div>
               </li>
-              <li className="flex items-center gap-4">
+              <li className="flex flex-col sm:flex-row items-center justify-center  sm:justify-start gap-4 pb-6 sm:pb-0">
                 <div className="flex items-center ">
                   <span className="material-icons text-xs">phone</span>
                 </div>
                 <div className=" font-Abhaya">02088776670, +447857181685</div>
               </li>
-              <li className="flex items-center gap-4">
+              <li className="flex  flex-col sm:flex-row items-center justify-center sm:justify-start gap-4">
                 <div className="flex items-center gap-2">
                   <span className="material-icons">email</span>
                 </div>

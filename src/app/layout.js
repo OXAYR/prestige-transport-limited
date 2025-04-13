@@ -6,7 +6,7 @@ import NavHeader from "./_components/NavHeader";
 import Footer from "./_components/Footer";
 
 export const metadata = {
-  title: "Prestige",
+  title: "Prestige Transport Limited",
   description: `At Prestige Transport Limited, We Specialize in Providing High-end, Luxury
 Airport Transfer Services to and From All Major Airports in London, Including Heathrow,
 Gatwick, London City, Luton, and Stansted. Whether You Are a Business Executive, a
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
         />
-        <title>Prestige</title>
+        <title>Prestige Transport Limited</title>
       </head>
       <body>
         <div className="overflow-x-hidden w-full">

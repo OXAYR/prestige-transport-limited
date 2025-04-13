@@ -22,6 +22,7 @@ export default function Footer() {
           <h3 className="md:text-2xl text-lg font-semibold">Our Cars</h3>
           <ul className="mt-2 space-y-1 text-gray-300">
             <li className=" cursor-pointer">Mercedes S-Class</li>
+            <li className=" cursor-pointer">Mercedes V-Class</li>
             <li className=" cursor-pointer">Mercedes E-Class</li>
             <li className=" cursor-pointer">BMW Series 5</li>
             <li className=" cursor-pointer">BMW Series 7</li>

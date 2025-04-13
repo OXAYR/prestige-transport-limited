@@ -12,12 +12,12 @@ function RidePricing() {
       luggage: 2,
       image: "/mercedes-s-class.svg",
     },
-    // {
-    //   name: "Mercedes C-Class",
-    //   seats: 4,
-    //   luggage: 2,
-    //   image: "/mercedes-c-class.svg",
-    // },
+    {
+      name: "Mercedes V-Class",
+      seats: 4,
+      luggage: 2,
+      image: "/mercedes-v-class.svg",
+    },
     {
       name: "Mercedes E-Class",
       seats: 4,

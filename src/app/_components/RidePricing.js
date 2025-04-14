@@ -14,7 +14,7 @@ function RidePricing() {
     },
     {
       name: "Mercedes V-Class",
-      seats: 4,
+      seats: 7,
       luggage: 2,
       image: "/mercedes-v-class.svg",
     },
@@ -82,29 +82,30 @@ function RidePricing() {
           </button>
 
           {/* Image Carousel */}
-          <div className="relative w-64 sm:w-96 lg:w-full h-44 flex justify-center items-center overflow-hidden">
+          <div className="relative w-64 sm:w-96 lg:w-full sm:h-64 h-44 flex justify-center items-center overflow-hidden">
             {rides.map((ride, i) => (
               <img
                 key={i}
                 src={ride.image}
                 alt={ride.name}
-                className={`absolute transition-all duration-700 ease-in-out transform h-44
-               ${
-                 i === index
-                   ? "opacity-100 translate-x-0 scale-100"
-                   : "opacity-0"
-               }
-               ${
-                 i === (index === 0 ? rides.length - 1 : index - 1)
-                   ? "-translate-x-full opacity-0"
-                   : ""
-               }
-               ${
-                 i === (index === rides.length - 1 ? 0 : index + 1)
-                   ? "translate-x-full opacity-0"
-                   : ""
-               }
-             `}
+                className={`absolute transition-all duration-700 ease-in-out transform
+                  ${
+                    i === index
+                      ? "opacity-100 translate-x-0 scale-100"
+                      : "opacity-0"
+                  }
+                  ${
+                    i === (index === 0 ? rides.length - 1 : index - 1)
+                      ? "-translate-x-full opacity-0"
+                      : ""
+                  }
+                  ${
+                    i === (index === rides.length - 1 ? 0 : index + 1)
+                      ? "translate-x-full opacity-0"
+                      : ""
+                  }
+                  ${ride.name === "Mercedes V-Class" ? "h-60 " : "h-44"}
+                `}
               />
             ))}
           </div>

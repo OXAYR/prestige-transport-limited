@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavHeader from "./_components/NavHeader";
 import Footer from "./_components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "Prestige Transport Limited",
@@ -34,7 +35,9 @@ export default function RootLayout({ children }) {
           <div className=" fixed top-0 w-full z-50">
             <NavHeader />
           </div>
-          <main className="">{children}</main>
+          <main className="">
+            {children} <Analytics />
+          </main>
 
           <Footer />
         </div>

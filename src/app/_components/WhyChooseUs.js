@@ -15,13 +15,14 @@ function WhyChooseUs() {
       text: "We operate 24 hours a day, 7 days a week, to accommodate your travel schedule, no matter the time of day or night. Our team is always ready to assist, ensuring a hassle-free experience, whether it’s a late-night arrival or an early morning departure.",
     },
     {
-      icon: "person_pin_circle",
-      title: "Personalized Service",
+      icon: "handshake",
+      title: "Meet & Greet",
       text: (
         <>
-          We understand that each traveler has unique needs. Our services are
-          fully customizable, including <strong>meet-and-greet</strong> at the
-          airport with name signage and assistance with luggage.
+          Our chauffeur will be ready and waiting at the designated meeting
+          point, smartly presented with a name board in hand. From assisting
+          with luggage to ensuring a smooth and comfortable onward journey, we
+          offer a seamless, stress-free experience from the moment you arrive.
         </>
       ),
     },
@@ -59,7 +60,7 @@ function WhyChooseUs() {
             key={index}
             className="border-2 border-white hover:bg-white hover:text-amber-950 text-white rounded-xl flex flex-col items-center gap-5 text-center transition-all duration-300 ease-in-out px-8 md:px-10 py-10 md:py-12"
           >
-            <div className="material-icons text-6xl md:text-7xl lg:text-8xl">
+            <div className="material-icons text-6xl md:text-7xl lg:text-8xl font-bold">
               {item.icon}
             </div>
             <h2 className="text-xl md:text-2xl font-bold mt-2">{item.title}</h2>

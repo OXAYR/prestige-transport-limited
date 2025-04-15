@@ -1,7 +1,7 @@
 /** @format */
 
 export const openWhatsAppChat = (type, data = {}) => {
-  const phone = "+923044979487"; // Replace with your WhatsApp number
+  const phone = process.env.NEXT_PUBLIC_PHONE_NUMBER;
   let message = "";
 
   switch (type) {

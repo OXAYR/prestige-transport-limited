@@ -1,10 +1,11 @@
 /** @format */
 
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "./Button";
 import { locations } from "../_data/londonLocations";
 import { openWhatsAppChat } from "../_utills/whatsappService";
+import fetchLocationsLondon from "../api/locations";
 
 const BookingForm = () => {
   const [tripType, setTripType] = useState("one-way");
@@ -21,26 +22,117 @@ const BookingForm = () => {
   const [showBaggageDropdown, setShowBaggageDropdown] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
-  const filteredFromLocations = locations.filter((location) =>
-    location.toLowerCase().includes(whereFrom.toLowerCase())
-  );
+  const [fromLocations, setFromLocations] = useState([]);
+  const [toLocations, setToLocations] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [debounceTimeout, setDebounceTimeout] = useState(null);
 
-  const filteredToLocations = locations.filter((location) =>
-    location.toLowerCase().includes(whereTo.toLowerCase())
-  );
+  const fetchLocations = async (query, type) => {
+    setErrorMessage(""); // Reset error message
+    try {
+      const response = await fetchLocationsLondon(query);
+      if (response && response.length > 0) {
+        if (type === "from") {
+          setFromLocations(response);
+        } else {
+          setToLocations(response);
+        }
+      } else {
+        setErrorMessage("We cannot operate in that area.");
+      }
+    } catch (error) {
+      console.error("Error fetching locations:", error);
+      setErrorMessage("An error occurred while fetching locations.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    setLoading(true);
+    if (debounceTimeout) {
+      clearTimeout(debounceTimeout);
+    }
+
+    if (whereFrom) {
+      setDebounceTimeout(
+        setTimeout(() => {
+          fetchLocations(whereFrom, "from");
+        }, 2000) // 3 seconds debounce
+      );
+    }
+
+    return () => {
+      clearTimeout(debounceTimeout); // Cleanup timeout on unmount or change
+    };
+  }, [whereFrom]);
+
+  useEffect(() => {
+    setLoading(true);
+    if (debounceTimeout) {
+      clearTimeout(debounceTimeout);
+    }
+
+    if (whereTo) {
+      setDebounceTimeout(
+        setTimeout(() => {
+          fetchLocations(whereTo, "to");
+        }, 2000) // 3 seconds debounce
+      );
+    }
+
+    return () => {
+      clearTimeout(debounceTimeout); // Cleanup timeout on unmount or change
+    };
+  }, [whereTo]);
+
+  const handleFromChange = (e) => {
+    const value = e.target.value;
+    setWhereFrom(value);
+    if (value) {
+      setShowFromDropdown(true);
+    } else {
+      setShowFromDropdown(false);
+    }
+  };
+
+  const handleToChange = (e) => {
+    const value = e.target.value;
+    setWhereTo(value);
+    if (value) {
+      setShowToDropdown(true);
+    } else {
+      setShowToDropdown(false);
+    }
+  };
 
   const handleSelectFromLocation = (location) => {
-    setWhereFrom(location);
+    setWhereFrom(location.formatted);
     setShowFromDropdown(false);
   };
 
   const handleSelectToLocation = (location) => {
-    setWhereTo(location);
+    setWhereTo(location.formatted);
     setShowToDropdown(false);
   };
 
   const handleGetPriceClick = () => {
-    if (whereFrom && whereTo && date && time && passengers && baggage) {
+    const isFromSelected = fromLocations.some(
+      (location) => location.formatted === whereFrom
+    );
+    const isToSelected = toLocations.some(
+      (location) => location.formatted === whereTo
+    );
+
+    if (
+      isFromSelected &&
+      isToSelected &&
+      date &&
+      time &&
+      passengers &&
+      baggage
+    ) {
       setShowModal(true);
     } else {
       setIsValidated(true);
@@ -72,23 +164,43 @@ const BookingForm = () => {
               isValidated && !whereFrom ? "border-red-500" : "border-gray-300"
             } p-4 rounded-md focus:outline-none focus:border-gray-500`}
             value={whereFrom}
-            onChange={(e) => {
-              setWhereFrom(e.target.value);
-              setShowFromDropdown(true);
-            }}
+            onChange={handleFromChange}
             onFocus={() => setShowFromDropdown(true)}
           />
           {showFromDropdown && whereFrom && (
             <ul className="absolute z-10 w-full bg-white text-black border border-gray-300 mt-1 max-h-60 overflow-y-auto rounded-md">
-              {filteredFromLocations.map((location) => (
-                <li
-                  key={location}
-                  className="p-2 cursor-pointer hover:bg-gray-200"
-                  onClick={() => handleSelectFromLocation(location)}
-                >
-                  {location}
-                </li>
-              ))}
+              {loading ? (
+                <div className="h-32 flex justify-center items-center">
+                  <svg
+                    aria-hidden="true"
+                    className="inline w-10 h-10 text-gray-200 animate-spin dark:text-gray-200  fill-amber-600"
+                    viewBox="0 0 100 101"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                      fill="currentFill"
+                    />
+                  </svg>
+                </div>
+              ) : fromLocations.length > 0 ? (
+                fromLocations.map((location, index) => (
+                  <li
+                    key={index}
+                    className="p-2 cursor-pointer hover:bg-gray-200"
+                    onClick={() => handleSelectFromLocation(location)}
+                  >
+                    {location.formatted}
+                  </li>
+                ))
+              ) : (
+                <li className="p-2 ">We cannot operate in that area.</li>
+              )}
             </ul>
           )}
         </div>
@@ -101,23 +213,43 @@ const BookingForm = () => {
               isValidated && !whereTo ? "border-red-500" : "border-gray-300"
             } p-4 rounded-md focus:outline-none focus:border-gray-500`}
             value={whereTo}
-            onChange={(e) => {
-              setWhereTo(e.target.value);
-              setShowToDropdown(true);
-            }}
+            onChange={handleToChange}
             onFocus={() => setShowToDropdown(true)}
           />
           {showToDropdown && whereTo && (
             <ul className="absolute z-10 w-full bg-white text-black border border-gray-300 mt-1 max-h-60 overflow-y-auto rounded-md">
-              {filteredToLocations.map((location) => (
-                <li
-                  key={location}
-                  className="p-2 cursor-pointer hover:bg-gray-200"
-                  onClick={() => handleSelectToLocation(location)}
-                >
-                  {location}
-                </li>
-              ))}
+              {loading ? (
+                <div className="h-32 flex justify-center items-center">
+                  <svg
+                    aria-hidden="true"
+                    className="inline w-10 h-10 text-gray-200 animate-spin dark:text-gray-200 fill-amber-600"
+                    viewBox="0 0 100 101"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                      fill="currentFill"
+                    />
+                  </svg>
+                </div>
+              ) : toLocations.length > 0 ? (
+                toLocations.map((location, index) => (
+                  <li
+                    key={index}
+                    className="p-2 cursor-pointer hover:bg-gray-200"
+                    onClick={() => handleSelectToLocation(location)}
+                  >
+                    {location.formatted}
+                  </li>
+                ))
+              ) : (
+                <li className="p-2 ">We cannot operate in that area.</li>
+              )}
             </ul>
           )}
         </div>

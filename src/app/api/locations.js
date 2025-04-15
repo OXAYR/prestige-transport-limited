@@ -22,7 +22,6 @@ export default async function fetchLocationsLondon(req, res) {
     }
 
     const data = await response.json();
-    console.log("here is hte data====", data);
 
     const londonAreas = data.features.filter(
       (feature) =>
@@ -36,10 +35,8 @@ export default async function fetchLocationsLondon(req, res) {
       lat: f.geometry.coordinates[1],
       lon: f.geometry.coordinates[0],
     }));
-    console.log("here is the area name ", areaNames);
     return areaNames;
   } catch (error) {
-    // console.error("Error fetching data:", error);
     res
       .status(500)
       .json({ error: "Failed to fetch areas", details: error.message });

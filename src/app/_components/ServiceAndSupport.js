@@ -66,6 +66,15 @@ export default function ServiceAndSupport() {
               </div>
             </div>
           </div>
+          <div className=" hidden sm:block"></div>
+          <div className="   w-full">
+            <div className=" cursor-pointer    bg-transparent border border-amber-50 text-white w-full sm:px-10 py-6 px-4  rounded-lg hover:bg-amber-50 hover:text-amber-950 flex justify-between items-center text-base gap-10 ">
+              <div className="flex items-center gap-2">
+                <img className="w-6" src="/whatsapp-icon.svg" />
+              </div>
+              <div className=" font-Abhaya">+44 7745167584, +44 7759053194</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

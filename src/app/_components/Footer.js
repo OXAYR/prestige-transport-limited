@@ -12,8 +12,14 @@ export default function Footer() {
             </h2>
           </div>
         </div>
-        <div className="sm:text-2xl mt-5 sm:mt-0  text-center font-bold text-primary-default ">
-          For Fastest Service: <span className="lg:mx-4"> +447857181685 </span>
+        <div className="sm:text-2xl mt-5 sm:mt-0 text-center font-bold text-primary-default flex items-center justify-center gap-2">
+          For Fastest Service:
+          <img
+            src="/whatsapp-icon-amber.svg"
+            className="w-6 sm:w-8"
+            alt="WhatsApp Icon"
+          />
+          <span>+447857181685</span>
         </div>
       </div>
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-end  gap-8 text-center md:text-left">
@@ -44,7 +50,7 @@ export default function Footer() {
         {/* Subscription */}
         <div className="w-full">
           <div className="w-full my-4">
-            <ul className="mt-2 space-y-1  text-gray-300 ">
+            <ul className="mt-2 space-y-3  text-gray-300 ">
               <li className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 pb-6 sm:pb-0 ">
                 <div className="flex items-center gap-2">
                   <span className="material-icons">location_on</span>
@@ -59,12 +65,20 @@ export default function Footer() {
                 </div>
                 <div className=" font-Abhaya">02088776670, +447857181685</div>
               </li>
-              <li className="flex  flex-col sm:flex-row items-center justify-center sm:justify-start gap-4">
+              <li className="flex  flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 pb-6 sm:pb-0">
                 <div className="flex items-center gap-2">
                   <span className="material-icons">email</span>
                 </div>
                 <div className=" font-Abhaya">
                   prestigetransport77@gmail.com
+                </div>
+              </li>
+              <li className="flex  flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 pb-6 sm:pb-0">
+                <div className="flex items-center gap-2">
+                  <img className="w-6" src="/whatsapp-icon.svg" />
+                </div>
+                <div className=" font-Abhaya">
+                  +44 7745167584, +44 7759053194
                 </div>
               </li>
             </ul>

@@ -199,7 +199,10 @@ const BookingForm = () => {
                   </li>
                 ))
               ) : (
-                <li className="p-2 ">We cannot operate in that area.</li>
+                <li className="p-2 ">
+                  Apologies, our services are currently limited to the London
+                  area
+                </li>
               )}
             </ul>
           )}
@@ -248,7 +251,10 @@ const BookingForm = () => {
                   </li>
                 ))
               ) : (
-                <li className="p-2 ">We cannot operate in that area.</li>
+                <li className="p-2 ">
+                  Apologies, our services are currently limited to the London
+                  area
+                </li>
               )}
             </ul>
           )}

@@ -145,6 +145,7 @@ const BookingForm = () => {
       (location) => location.formatted === whereTo
     );
 
+    console.log("herei sht elocaito n", isFromSelected, isToSelected);
     if (
       isFromSelected &&
       isToSelected &&

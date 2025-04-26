@@ -3,6 +3,7 @@
 export const openWhatsAppChat = (type, data = {}) => {
   const phone = process.env.NEXT_PUBLIC_PHONE_NUMBER;
   let message = "";
+  console.log("here is hte pohoen ---->", phone);
 
   switch (type) {
     case "bookingForm":

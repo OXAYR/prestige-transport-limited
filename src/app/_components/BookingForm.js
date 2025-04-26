@@ -138,17 +138,10 @@ const BookingForm = () => {
   };
 
   const handleGetPriceClick = () => {
-    const isFromSelected = fromLocations.some(
-      (location) => location.formatted === whereFrom
-    );
-    const isToSelected = toLocations.some(
-      (location) => location.formatted === whereTo
-    );
-
-    console.log("herei sht elocaito n", isFromSelected, isToSelected);
     if (
-      isFromSelected &&
-      isToSelected &&
+      whereFrom &&
+      whereTo &&
+      !errorMessage &&
       date &&
       time &&
       passengers &&

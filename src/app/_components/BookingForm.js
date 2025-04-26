@@ -28,6 +28,14 @@ const BookingForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [debounceTimeout, setDebounceTimeout] = useState(null);
 
+  const [fromLat, setFromLat] = useState(null);
+  const [fromLng, setFromLng] = useState(null);
+  const [fromCity, setFromCity] = useState("");
+
+  const [toLat, setToLat] = useState(null);
+  const [toLng, setToLng] = useState(null);
+  const [toCity, setToCity] = useState("");
+
   const fetchLocations = async (query, type) => {
     setErrorMessage(""); // Reset error message
     try {
@@ -90,30 +98,42 @@ const BookingForm = () => {
   const handleFromChange = (e) => {
     const value = e.target.value;
     setWhereFrom(value);
-    if (value) {
-      setShowFromDropdown(true);
-    } else {
+    if (!value) {
+      setFromLat(null);
+      setFromLng(null);
+      setFromCity("");
       setShowFromDropdown(false);
+    } else {
+      setShowFromDropdown(true);
     }
   };
 
   const handleToChange = (e) => {
     const value = e.target.value;
     setWhereTo(value);
-    if (value) {
-      setShowToDropdown(true);
-    } else {
+    if (!value) {
+      setToLat(null);
+      setToLng(null);
+      setToCity("");
       setShowToDropdown(false);
+    } else {
+      setShowToDropdown(true);
     }
   };
 
   const handleSelectFromLocation = (location) => {
     setWhereFrom(location.formatted);
+    setFromLat(location.lat);
+    setFromLng(location.lon);
+    setFromCity(location.city || "London");
     setShowFromDropdown(false);
   };
 
   const handleSelectToLocation = (location) => {
     setWhereTo(location.formatted);
+    setToLat(location.lat);
+    setToLng(location.lon);
+    setToCity(location.city || "London");
     setShowToDropdown(false);
   };
 
@@ -141,11 +161,18 @@ const BookingForm = () => {
 
   const handleNavigateToWhatsapp = (region) => {
     setShowModal(false);
+
     openWhatsAppChat("bookingForm", {
       whereFrom,
       whereTo,
       date,
       time,
+      fromLat,
+      fromLng,
+      toLat,
+      toLng,
+      fromCity,
+      toCity,
       passengers,
       baggage,
       region,
@@ -188,7 +215,7 @@ const BookingForm = () => {
                     />
                   </svg>
                 </div>
-              ) : fromLocations.length > 0 ? (
+              ) : fromLocations.length > 0 && !errorMessage ? (
                 fromLocations.map((location, index) => (
                   <li
                     key={index}
@@ -240,7 +267,7 @@ const BookingForm = () => {
                     />
                   </svg>
                 </div>
-              ) : toLocations.length > 0 ? (
+              ) : toLocations.length > 0 && !errorMessage ? (
                 toLocations.map((location, index) => (
                   <li
                     key={index}
@@ -299,7 +326,7 @@ const BookingForm = () => {
           />
           {showPassengersDropdown && (
             <ul className="absolute z-10 w-full bg-white text-black border border-gray-300 mt-1 max-h-60 overflow-y-auto rounded-md">
-              {[1, 2, 3, 4].map((num) => (
+              {[1, 2, 3, 4, 5, 6, 7].map((num) => (
                 <li
                   key={num}
                   className="p-2 cursor-pointer hover:bg-gray-200"

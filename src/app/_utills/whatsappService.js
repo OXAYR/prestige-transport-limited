@@ -31,10 +31,19 @@ export const openWhatsAppChat = (type, data = {}) => {
   Where From: ${data.whereFrom}
   Where To: ${data.whereTo}
   Date: ${data.date}
-  Time: ${formattedTime}
+  Time: ${formattedTime},
   Number of Passengers: ${data.passengers}
   Number of Baggage: ${data.baggage}
-  
+
+  ---------------------------------
+
+  from City: ${data.fromCity}
+  to City: ${data.toCity}
+  from Coordinates: Lat: [${data.fromLat}] - Long: [${data.fromLng}]
+  to Coordinates: Lat: [${data.toLat}] - Long: [${data.toLng}]
+
+  ---------------------------------
+
   What price would you offer?`;
       break;
 

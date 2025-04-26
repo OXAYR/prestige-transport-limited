@@ -18,6 +18,7 @@ function RidePricing() {
       luggage: 2,
       image: "/mercedes-v-class.svg",
     },
+
     {
       name: "Mercedes E-Class",
       seats: 4,
@@ -25,6 +26,7 @@ function RidePricing() {
       image: "/mercedes-e-class.svg",
     },
     { name: "Audi-a6", seats: 4, luggage: 2, image: "/audi-a6.svg" },
+    { name: "Audi-a8", seats: 4, luggage: 2, image: "/audi-8-l.svg" },
     { name: "BMW Series 5", seats: 4, luggage: 2, image: "/bmw-series-5.svg" },
     { name: "BMW Series 7", seats: 4, luggage: 2, image: "/bmw-series-7.svg" },
   ];
@@ -82,7 +84,7 @@ function RidePricing() {
           </button>
 
           {/* Image Carousel */}
-          <div className="relative w-64 sm:w-96 lg:w-full sm:h-64 h-44 flex justify-center items-center overflow-hidden">
+          <div className="relative w-64 sm:w-96 lg:w-full sm:h-72 h-44 flex justify-center items-center overflow-hidden">
             {rides.map((ride, i) => (
               <img
                 key={i}
@@ -104,7 +106,7 @@ function RidePricing() {
                       ? "translate-x-full opacity-0"
                       : ""
                   }
-                  ${ride.name === "Mercedes V-Class" ? "h-60 " : "h-44"}
+                  ${ride.name === "Mercedes V-Class" ? "h-72 " : "h-56"}
                 `}
               />
             ))}

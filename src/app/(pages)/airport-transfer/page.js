@@ -8,6 +8,11 @@ import NavHeader from "@/app/_components/NavHeader";
 import RidePricing from "@/app/_components/RidePricing";
 import React from "react";
 
+export const metadata = {
+  title: "London Airport Transfers | Heathrow, Gatwick, Luton & More",
+  description: `Reliable airport transfer services to and from all major London airports, including Heathrow, Gatwick, Luton, and Stansted. Travel in comfort with Prestige Transport.​`,
+};
+
 function AirportService() {
   return (
     <div className=" font-abhaya">

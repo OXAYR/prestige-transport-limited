@@ -5,6 +5,11 @@ import HeroSection from "@/app/_components/HeroSection";
 import ServiceAndSupport from "@/app/_components/ServiceAndSupport";
 import React from "react";
 
+export const metadata = {
+  title: "About Prestige Transport | Your Trusted Transport Service",
+  description: `Learn more about Prestige Transport, London's premier provider of luxury transport services. Discover our commitment to excellence and customer satisfaction.`,
+};
+
 function About() {
   return (
     <div className=" font-abhaya">

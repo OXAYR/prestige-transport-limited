@@ -8,6 +8,11 @@ import NavHeader from "@/app/_components/NavHeader";
 import RidePricing from "@/app/_components/RidePricing";
 import React from "react";
 
+export const metadata = {
+  title: "Executive Business Travel | Prestige Transport Services",
+  description: `Professional chauffeur services tailored for business professionals. Enjoy a productive and comfortable journey with our luxury vehicles and experienced drivers.`,
+};
+
 function Business() {
   return (
     <div className=" font-abhaya">

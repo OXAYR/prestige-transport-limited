@@ -13,9 +13,9 @@ function NavHeader() {
   // Mapping nav items with their corresponding paths
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Airport Service", path: "/airportService" },
-    { name: "Business", path: "/business" },
-    { name: "Events", path: "/events" },
+    { name: "Airport Service", path: "/airport-transfer" },
+    { name: "Business", path: "/business-travel" },
+    { name: "Events", path: "/events-transport" },
     { name: "About", path: "/about" },
   ];
 

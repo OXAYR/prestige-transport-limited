@@ -10,20 +10,20 @@ function Services() {
     {
       image: "/airport-service.svg",
       title: "Airport Pick-Up & Drop-Off",
-      path: "/airportService",
+      path: "/airport-transfer",
       description:
         "Whether you're arriving or departing from any of London's major airports, we ensure a smooth and comfortable journey. We'll meet you at the designated pick-up point and take you directly to your destination or to your flight with no stress or delays.",
     },
     {
       image: "/business-service.svg",
       title: "Corporate and Executive Transfers",
-      path: "/business",
+      path: "/business-travel",
       description:
         "Tailored for business professionals who need to travel in style and comfort. Our luxury vehicles provide a quiet and productive environment for work on the go, complete with Wi-Fi, charging ports, and more.",
     },
     {
       image: "/get-qoute.svg",
-      path: "/business",
+      path: "/business-travel",
       title: "VIP & Celebrity Transfers",
       description:
         "Our service is discreet and private, ensuring you receive the highest level of comfort, security, and luxury. Whether you're arriving for an important event or need to make a swift departure, we ensure a seamless experience from start to finish.",
@@ -31,14 +31,14 @@ function Services() {
     {
       image: "/about-us-banner.svg",
       title: "Long-Distance Transfers",
-      path: "/business",
+      path: "/business-travel",
       description:
         "In addition to airport transfers, we offer long-distance journeys to other parts of the UK or Europe. Our luxury cars are equipped to ensure a relaxed and pleasant experience, with options for refreshments and entertainment.",
     },
     {
       image: "/event-service.svg",
       title: "Special Occasions",
-      path: "/events",
+      path: "/events-transport",
       description:
         "Make your special event unforgettable with a luxury ride. From weddings to anniversaries or business celebrations, we provide elegant transport that enhances the occasion.",
     },

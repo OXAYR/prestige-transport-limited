@@ -25,8 +25,8 @@ function RidePricing() {
       luggage: 2,
       image: "/mercedes-e-class.svg",
     },
-    { name: "Audi-a6", seats: 4, luggage: 2, image: "/audi-a6.svg" },
-    { name: "Audi-a8", seats: 4, luggage: 2, image: "/audi-8-l.svg" },
+    { name: "Audi-A6", seats: 4, luggage: 2, image: "/audi-a6.svg" },
+    { name: "Audi-A8", seats: 4, luggage: 2, image: "/audi-8-l.svg" },
     { name: "BMW Series 5", seats: 4, luggage: 2, image: "/bmw-series-5.svg" },
     { name: "BMW Series 7", seats: 4, luggage: 2, image: "/bmw-series-7.svg" },
   ];

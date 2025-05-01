@@ -1,5 +1,7 @@
 /** @format */
 
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-br from-black to-amber-950 text-white py-5 px-6 md:px-20 font-abhaya">
@@ -33,17 +35,25 @@ export default function Footer() {
             <li className=" cursor-pointer">BMW Series 5</li>
             <li className=" cursor-pointer">BMW Series 7</li>
             <li className=" cursor-pointer">Audi A6</li>
+            <li className=" cursor-pointer">Audi A8</li>
           </ul>
         </div>
 
         <div>
           <h3 className="md:text-2xl text-lg font-semibold">Our Services</h3>
           <ul className="mt-2 space-y-1 text-gray-300">
-            <li className=" cursor-pointer">Home</li>
-
-            <li className=" cursor-pointer">Airport Transfers</li>
-            <li className=" cursor-pointer">Business</li>
-            <li className=" cursor-pointer">Events</li>
+            <li className="cursor-pointer">
+              <Link href="/">Home</Link>
+            </li>
+            <li className="cursor-pointer">
+              <Link href="/airport-transfer">Airport Transfers</Link>
+            </li>
+            <li className="cursor-pointer">
+              <Link href="/business-travel">Business</Link>
+            </li>
+            <li className="cursor-pointer">
+              <Link href="/events-transport">Events</Link>
+            </li>
           </ul>
         </div>
 

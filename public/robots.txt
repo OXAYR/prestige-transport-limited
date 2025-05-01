@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.prestigetransport.co.uk
+
+# Sitemaps
+Sitemap: https://www.prestigetransport.co.uk/sitemap.xml

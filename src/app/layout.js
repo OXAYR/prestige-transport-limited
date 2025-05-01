@@ -7,7 +7,7 @@ import Footer from "./_components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
-  title: "Prestige Transport Limited",
+  title: "Prestige Transport Limited  | Luxury Transport Service in London",
   description: `At Prestige Transport Limited, We Specialize in Providing High-end, Luxury
 Airport Transfer Services to and From All Major Airports in London, Including Heathrow,
 Gatwick, London City, Luton, and Stansted. Whether You Are a Business Executive, a
@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Prestige Transport",
+  "name": "Prestige Transport Limited",
   "image": "https://www.prestigetransport.co.uk/logo.svg",
   "url": "https://www.prestigetransport.co.uk",
   "telephone": "+44 2088776670",
@@ -75,7 +75,7 @@ export default function RootLayout({ children }) {
         />
         <meta
           property="og:title"
-          content="Prestige Transport - Luxury Chauffeur Services"
+          content="Prestige Transport - Luxury Transport Services"
         />
         <meta
           property="og:description"

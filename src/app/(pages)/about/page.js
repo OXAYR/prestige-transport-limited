@@ -1,5 +1,5 @@
 /** @format */
-"use client";
+
 import GetQoute from "@/app/_components/GetQoute";
 import HeroSection from "@/app/_components/HeroSection";
 import ServiceAndSupport from "@/app/_components/ServiceAndSupport";

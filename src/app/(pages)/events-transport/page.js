@@ -9,7 +9,7 @@ import RidePricing from "@/app/_components/RidePricing";
 import React from "react";
 
 export const metadata = {
-  title: "Event Chauffeur Services | Weddings, Parties & Special Occasions",
+  title: "Event Transfer Services | Weddings, Parties & Special Occasions",
   description: `Make your special events unforgettable with our luxury chauffeur services. Perfect for weddings, parties, and other significant occasions in and around London.`,
 };
 

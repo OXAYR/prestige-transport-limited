@@ -66,7 +66,7 @@ export default function Footer() {
                   <span className="material-icons">location_on</span>
                 </div>
                 <div className=" font-Abhaya">
-                  207 Lower Richmen Road SW15 1HJ, London, Uk,
+                  207 Lower Richmond Road SW15 1HJ, London, Uk,
                 </div>
               </li>
               <li className="flex flex-col sm:flex-row items-center justify-center  sm:justify-start gap-4 pb-6 sm:pb-0">
